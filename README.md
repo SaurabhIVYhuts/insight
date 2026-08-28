@@ -122,7 +122,6 @@ already exists.)
 curl -H "Authorization: Bearer $CRON_SECRET" https://insight.ivyhuts.com/api/insights/advance-crawl
 curl -H "Authorization: Bearer $CRON_SECRET" https://insight.ivyhuts.com/api/insights/daily-digest
 ```
-
 ---
 
 ## Auth across `*.ivyhuts.com` (optional)
