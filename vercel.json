@@ -17,5 +17,14 @@
         { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
       ]
     }
+  ],
+  
+ "crons": [
+    {
+      "path": "/api/insights/daily-digest",
+      "schedule": "30 2 * * *"
+    }
   ]
+
+
 }
