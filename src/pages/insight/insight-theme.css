@@ -390,6 +390,24 @@
 .insight-trendchart-breakdown h4 { font-size: 0.84rem; font-weight: 700; color: var(--brand-purple-deep); margin: 0 0 12px; }
 .insight-trendchart-breakdown-scroll { max-height: 480px; overflow-y: auto; }
 .insight-trendchart-footnote { margin: 10px 0 0; font-size: 0.76rem; color: var(--ink-faint); }
+
+/* ── MOVERS (day-over-day change by country/city) ── */
+.insight-movers-summary { margin: 0 0 14px; font-size: 0.8rem; font-weight: 600; color: var(--ink-soft); }
+.insight-movers-summary .delta-up { color: var(--brand-purple-deep); }
+.insight-movers-summary .delta-down { color: #2f6fb0; }
+.insight-movers-note { display: block; margin-top: 4px; font-size: 0.74rem; font-weight: 500; color: var(--ink-faint); }
+.insight-movers { display: flex; flex-direction: column; gap: 10px; }
+.insight-movers-row { display: grid; grid-template-columns: 172px 1fr auto; align-items: center; gap: 10px; }
+.insight-movers-label { font-size: 0.82rem; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.insight-movers-track { position: relative; height: 22px; background: #F3ECF1; border-radius: var(--radius-full); }
+.insight-movers-axis { position: absolute; left: 50%; top: 0; bottom: 0; width: 1px; background: var(--border-soft); transform: translateX(-0.5px); }
+.insight-movers-fill { position: absolute; top: 0; height: 100%; transition: width 0.4s ease; }
+.insight-movers-fill.is-up { left: 50%; border-radius: 0 var(--radius-full) var(--radius-full) 0; }
+.insight-movers-fill.is-down { right: 50%; border-radius: var(--radius-full) 0 0 var(--radius-full); }
+.insight-movers-value { display: flex; align-items: center; gap: 8px; font-size: 0.8rem; font-weight: 700; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.insight-movers-prevcurr { color: var(--ink-faint); font-weight: 600; }
+.insight-movers-value .is-up { color: var(--brand-purple-deep); }
+.insight-movers-value .is-down { color: #2f6fb0; }
 .sr-only {
   position: absolute;
   width: 1px;
@@ -654,6 +672,7 @@
   .insight-content { padding: 16px 16px 40px; }
   .insight-kpi-grid { grid-template-columns: repeat(2, 1fr); }
   .insight-barlist-row { grid-template-columns: 90px 1fr auto; }
+  .insight-movers-row { grid-template-columns: 108px 1fr auto; }
 }
 
 @media (max-width: 520px) {

@@ -1,7 +1,9 @@
 import React, { useMemo, useState } from "react";
 import BreakdownHeatmap from "../charts/BreakdownHeatmap";
 import BarList from "../charts/BarList";
+import MoversList from "../charts/MoversList";
 import TrendBarChart from "../charts/TrendBarChart";
+import TrendChangeChart from "../charts/TrendChangeChart";
 import TrendLineChart from "../charts/TrendLineChart";
 import { ChartSkeleton } from "../SkeletonBlocks";
 import ErrorState, { EmptyState } from "../ErrorState";
@@ -15,15 +17,60 @@ const DIMENSIONS = [
   { key: "country", label: "Country" },
   { key: "city", label: "City" },
 ];
-// Two views of the exact same ranked breakdown data — heatmap (sequential
+// What the big chart plots: the running sold-out total, or the period-over-
+// period change (the time-series form of the Movers breakdown below it).
+const CHART_MODES = [
+  { key: "total", label: "Total" },
+  { key: "change", label: "Change" },
+];
+// Three views of the same underlying per-place data. Heatmap (sequential
 // magnitude, the dataviz skill's own alternative to a bar form, good for
 // scanning many places at once) and a plain bar chart (better for precise
-// side-by-side length comparison of a shorter list). Same data either way,
-// never a second source of truth.
+// side-by-side length comparison of a shorter list) both show the selected
+// period's absolute sold-out totals — same data, never a second source of
+// truth. Movers instead shows the change vs the immediately-previous stored
+// point (previous day, or previous month's representative day) — "which
+// places drove the change," which neither absolute view can answer.
 const BREAKDOWN_VIEWS = [
   { key: "heatmap", label: "Heatmap" },
   { key: "bar", label: "Bar Chart" },
+  { key: "movers", label: "Movers Δ" },
 ];
+
+// "1 September 2026" / "September 2026" for a day / month key — shared by the
+// active-period heading and the Movers view's "vs <previous period>" label.
+function fmtPeriod(key, granularity) {
+  const d = new Date(granularity === "day" ? `${key}T00:00:00` : `${key}-01T00:00:00`);
+  return granularity === "day"
+    ? d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
+    : d.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
+}
+
+// Fold the per-place rows of one period into a case-normalised map keyed by
+// country (or city+country) -> summed soldOut. The stored snapshots carry the
+// same place under inconsistent casing ("Frankfurt am Main" vs "Frankfurt Am
+// Main", "Saint-Étienne" vs "Saint-étienne"), which would otherwise show up
+// as a pair of equal-and-opposite ±1 movers that are really the same place.
+// City rows carry a single-line "City, Country" label (same form as the focus
+// dropdown) so the location is unambiguous — city names collide across
+// countries in this data (two real "London"s, etc.).
+function aggregateByPlace(rows, dimension) {
+  const map = new Map();
+  for (const r of rows || []) {
+    const rawKey = dimension === "country" ? r.country : r.city;
+    if (!rawKey) continue;
+    const norm = String(rawKey).toLocaleLowerCase().trim();
+    const key = dimension === "country" ? norm : `${norm}||${String(r.country || "").toLocaleLowerCase().trim()}`;
+    const entry = map.get(key) || {
+      id: key,
+      label: dimension === "country" ? r.country : r.country ? `${r.city}, ${r.country}` : r.city,
+      soldOut: 0,
+    };
+    entry.soldOut += r.soldOut || 0;
+    map.set(key, entry);
+  }
+  return map;
+}
 
 // Default caps the ranked list to a short "headline" view (matches the cap
 // MarketSection already uses for its own ranked lists), but the dropdown
@@ -65,7 +112,11 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
   // few months of history both views are equally reasonable; this is a
   // one-click toggle either way.
   const [granularity, setGranularity] = useState("day");
-  const [dimension, setDimension] = useState("country");
+  // City by default: this section's whole question is "where sold out" and the
+  // most actionable answer is at city level (the Country toggle is still there
+  // for a coarser overview).
+  const [dimension, setDimension] = useState("city");
+  const [chartMode, setChartMode] = useState("total");
   const [selectedKey, setSelectedKey] = useState(null);
   const [breakdownLimit, setBreakdownLimit] = useState("10");
   const [breakdownView, setBreakdownView] = useState("heatmap");
@@ -146,13 +197,54 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
   }, [activeEntry, dimension]);
   const breakdownData = breakdownLimit === "all" ? breakdownFull : breakdownFull.slice(0, Number(breakdownLimit));
 
-  const activeLabel = useMemo(() => {
-    if (!activeEntry) return "";
-    const d = new Date(granularity === "day" ? `${activeEntry.key}T00:00:00` : `${activeEntry.key}-01T00:00:00`);
-    return granularity === "day"
-      ? d.toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" })
-      : d.toLocaleDateString("en-GB", { month: "long", year: "numeric" });
-  }, [activeEntry, granularity]);
+  const activeLabel = useMemo(() => (activeEntry ? fmtPeriod(activeEntry.key, granularity) : ""), [activeEntry, granularity]);
+
+  // The point immediately before the active one in the (ascending) series —
+  // what the Movers view diffs against. null on the very first stored point.
+  const prevEntry = useMemo(() => {
+    if (!activeEntry) return null;
+    const i = points.findIndex((p) => p.key === activeEntry.key);
+    return i > 0 ? points[i - 1] : null;
+  }, [points, activeEntry]);
+  const prevLabel = useMemo(() => (prevEntry ? fmtPeriod(prevEntry.key, granularity) : ""), [prevEntry, granularity]);
+
+  // Every place whose sold-out count changed between prevEntry and activeEntry,
+  // for the current dimension — signed delta, sorted gainers-first then by
+  // magnitude. Case-normalised (see aggregateByPlace) so casing-only duplicate
+  // rows in the stored snapshots don't surface as phantom ±1 movers.
+  const moversFull = useMemo(() => {
+    if (!activeEntry || !prevEntry) return [];
+    const curr = aggregateByPlace(dimension === "country" ? activeEntry.countries : activeEntry.cities, dimension);
+    const prev = aggregateByPlace(dimension === "country" ? prevEntry.countries : prevEntry.cities, dimension);
+    const rows = [];
+    for (const key of new Set([...curr.keys(), ...prev.keys()])) {
+      const c = curr.get(key)?.soldOut || 0;
+      const p = prev.get(key)?.soldOut || 0;
+      if (c === p) continue;
+      const meta = curr.get(key) || prev.get(key);
+      rows.push({ id: key, label: meta.label, sublabel: meta.sublabel, prev: p, curr: c, delta: c - p });
+    }
+    rows.sort((a, b) => b.delta - a.delta || Math.abs(b.delta) - Math.abs(a.delta) || a.label.localeCompare(b.label));
+    return rows;
+  }, [activeEntry, prevEntry, dimension]);
+
+  // Same Top-N / All control as the absolute views, but "top" here means
+  // largest absolute move in either direction — so the cap can't silently
+  // drop every place that freed up just because the gainers out-number them.
+  const moversData = useMemo(() => {
+    if (breakdownLimit === "all") return moversFull;
+    const keep = new Set(
+      [...moversFull].sort((a, b) => Math.abs(b.delta) - Math.abs(a.delta)).slice(0, Number(breakdownLimit)).map((r) => r.id)
+    );
+    return moversFull.filter((r) => keep.has(r.id));
+  }, [moversFull, breakdownLimit]);
+
+  // Headline site-wide move vs the sum of the per-place moves — they differ by
+  // whatever sold-out inventory sits in an unresolved ("Unknown") locality
+  // that the country/city breakdown deliberately excludes. Surfaced, never
+  // hidden, so the numbers visibly reconcile.
+  const headlineDelta = prevEntry && activeEntry ? (activeEntry.totalSoldOut || 0) - (prevEntry.totalSoldOut || 0) : 0;
+  const moversNet = moversFull.reduce((s, r) => s + r.delta, 0);
 
   // Human label for the dropdown's current selection — a plain country name,
   // or "City, Country" for the composite city key.
@@ -175,6 +267,19 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
     return points.map((p) => ({ ...p, totalSoldOut: (p.cities || []).find((c) => c.city === city && (c.country || "") === country)?.soldOut || 0 }));
   }, [points, focusKey, dimension]);
 
+  // Signed period-over-period change for the "Change" chart mode — derived
+  // from whatever chartPoints currently represents (site-wide, or one focused
+  // place), so the toggle works the same in both. First point has no
+  // predecessor, so its change is null (drawn as no bar, never a fake zero).
+  const changePoints = useMemo(
+    () =>
+      chartPoints.map((p, i) => ({
+        key: p.key,
+        value: i === 0 ? null : (p.totalSoldOut || 0) - (chartPoints[i - 1].totalSoldOut || 0),
+      })),
+    [chartPoints]
+  );
+
   return (
     <div className="insight-section">
       <div className="insight-section-intro">
@@ -185,9 +290,14 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
       <div className="insight-card">
         <div className="insight-table-toolbar">
           <div>
-            <h3 style={{ marginBottom: 4 }}>{focusKey ? `Sold-Out Inventory — ${focusLabel}` : "Sold-Out Inventory Over Time"}</h3>
+            <h3 style={{ marginBottom: 4 }}>
+              {chartMode === "change" ? "Sold-Out Inventory Change" : "Sold-Out Inventory Over Time"}
+              {focusKey ? ` — ${focusLabel}` : ""}
+            </h3>
             <p className="insight-card-sub" style={{ margin: 0 }}>
-              {focusKey
+              {chartMode === "change"
+                ? `${focusKey ? `${focusLabel}'s` : "Site-wide"} ${granularity}-over-${granularity} change in sold-out inventory. Click a bar for the ${dimension} breakdown.`
+                : focusKey
                 ? `${focusLabel}'s own sold-out count across every stored ${granularity}.`
                 : `${
                     granularity === "month" ? "Each month's total is its latest stored snapshot." : "One point per stored daily snapshot."
@@ -195,6 +305,25 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
             </p>
           </div>
           <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
+            <div className="insight-dimension-switch">
+              {CHART_MODES.map((m) => (
+                <button
+                  key={m.key}
+                  type="button"
+                  className={chartMode === m.key ? "active" : ""}
+                  onClick={() => {
+                    setChartMode(m.key);
+                    // Pair the chart with its matching breakdown: "Change"
+                    // lines up with the Movers list, "Total" with the ranked
+                    // absolute views. Non-sticky — freely switchable after.
+                    if (m.key === "change") setBreakdownView("movers");
+                    else if (breakdownView === "movers") setBreakdownView("heatmap");
+                  }}
+                >
+                  {m.label}
+                </button>
+              ))}
+            </div>
             <div className="insight-dimension-switch">
               {GRANULARITIES.map((g) => (
                 <button
@@ -250,7 +379,9 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
           <EmptyState message="No sold-out snapshots recorded yet." onReset={onResetFilters} />
         ) : (
           <>
-            {focusKey ? (
+            {chartMode === "change" ? (
+              <TrendChangeChart points={changePoints} granularity={granularity} selectedKey={activeKey} onSelectKey={setSelectedKey} />
+            ) : focusKey ? (
               <TrendLineChart points={chartPoints} granularity={granularity} label={focusLabel} />
             ) : (
               <TrendBarChart points={chartPoints} granularity={granularity} selectedKey={activeKey} onSelectKey={setSelectedKey} />
@@ -259,8 +390,18 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
               <div className="insight-trendchart-breakdown">
                 <div className="insight-table-toolbar" style={{ marginBottom: 12 }}>
                   <h4 style={{ margin: 0 }}>
-                    {breakdownLimit === "all" ? "All" : `Top ${breakdownLimit}`} {dimension === "country" ? "countries" : "cities"} — {activeLabel}
-                    {breakdownLimit !== "all" && breakdownFull.length > Number(breakdownLimit) ? ` (of ${breakdownFull.length})` : ""}
+                    {breakdownView === "movers" ? (
+                      <>
+                        {breakdownLimit === "all" ? "All" : `Top ${breakdownLimit}`} {dimension === "country" ? "country" : "city"} movers
+                        {prevEntry ? ` vs ${prevLabel}` : ""} — {activeLabel}
+                        {breakdownLimit !== "all" && moversFull.length > Number(breakdownLimit) ? ` (of ${moversFull.length})` : ""}
+                      </>
+                    ) : (
+                      <>
+                        {breakdownLimit === "all" ? "All" : `Top ${breakdownLimit}`} {dimension === "country" ? "countries" : "cities"} — {activeLabel}
+                        {breakdownLimit !== "all" && breakdownFull.length > Number(breakdownLimit) ? ` (of ${breakdownFull.length})` : ""}
+                      </>
+                    )}
                   </h4>
                   <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
                     <div className="insight-dimension-switch">
@@ -279,9 +420,35 @@ export default function TrendSection({ trend, error, onRetry, onResetFilters }) 
                     </select>
                   </div>
                 </div>
+                {breakdownView === "movers" && prevEntry && moversFull.length > 0 && (
+                  <p className="insight-movers-summary">
+                    Site-wide sold-out {prevEntry.totalSoldOut?.toLocaleString()} &rarr; {activeEntry.totalSoldOut?.toLocaleString()}{" "}
+                    <span className={headlineDelta >= 0 ? "delta-up" : "delta-down"}>
+                      ({headlineDelta >= 0 ? "+" : "−"}
+                      {Math.abs(headlineDelta).toLocaleString()})
+                    </span>{" "}
+                    · {moversFull.filter((r) => r.delta > 0).length} {dimension === "country" ? "countries" : "cities"} up,{" "}
+                    {moversFull.filter((r) => r.delta < 0).length} down
+                    {moversNet !== headlineDelta && (
+                      <span className="insight-movers-note">
+                        {Math.abs(headlineDelta - moversNet).toLocaleString()} of the site-wide move sits in an unresolved locality and isn&rsquo;t
+                        attributed to a named {dimension} above.
+                      </span>
+                    )}
+                  </p>
+                )}
                 <div className="insight-trendchart-breakdown-scroll">
                   {breakdownView === "heatmap" ? (
                     <BreakdownHeatmap data={breakdownData} valueKey="soldOut" labelKey={dimension} emptyMessage={`No ${dimension} data for this ${granularity}.`} />
+                  ) : breakdownView === "movers" ? (
+                    <MoversList
+                      data={moversData}
+                      emptyMessage={
+                        prevEntry
+                          ? `No ${dimension} changed its sold-out count between ${prevLabel} and ${activeLabel}.`
+                          : `${activeLabel} is the earliest stored ${granularity} — nothing before it to compare against.`
+                      }
+                    />
                   ) : (
                     <BarList
                       data={breakdownData}
