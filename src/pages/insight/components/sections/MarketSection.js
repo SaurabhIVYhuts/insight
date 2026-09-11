@@ -47,6 +47,104 @@ function rankOpportunity(cities, overviewByCity) {
     .slice(0, 6);
 }
 
+// Every property in one city: the city's own list merged with the full
+// sold-out list (market.properties). The merge matters for snapshots saved
+// before per-city lists were uncapped — those carry only 4 samples per city,
+// but always carry every sold-out property. Sold-out first, then by price.
+function cityPropertyList(city, soldOutProperties) {
+  const citySoldOut = (soldOutProperties || []).filter((p) => p.city === city.city && p.country === city.country);
+  const seen = new Set();
+  const rows = [];
+  for (const p of [...citySoldOut, ...(city.properties || [])]) {
+    const key = p.id ?? p.slug ?? `${p.name}-${p.pincode}`;
+    if (seen.has(key)) continue;
+    seen.add(key);
+    rows.push({ ...p, key });
+  }
+  return rows.sort((a, b) => Number(a.available) - Number(b.available) || (b.minPrice ?? -1) - (a.minPrice ?? -1));
+}
+
+const DRILLDOWN_FILTERS = [
+  { key: "all", label: "All" },
+  { key: "soldOut", label: "Sold Out" },
+  { key: "available", label: "Available" },
+];
+
+function CityDrilldown({ city, soldOutProperties }) {
+  const [filter, setFilter] = useState("all");
+  const all = useMemo(() => cityPropertyList(city, soldOutProperties), [city, soldOutProperties]);
+  const soldOutCount = all.filter((p) => !p.available).length;
+  const counts = { all: all.length, soldOut: soldOutCount, available: all.length - soldOutCount };
+  const rows = filter === "all" ? all : all.filter((p) => (filter === "available" ? p.available : !p.available));
+  // The list can be shorter than the counts for two real reasons: older
+  // snapshots recorded only a few available properties per city, and the
+  // crawl occasionally counts one property twice when Amber's pages shift
+  // mid-crawl (the list is de-duplicated, the counts are not). Say so rather
+  // than let the list silently disagree with the counts.
+  const counted = city.soldOut + city.available;
+  const notListed = counted - all.length;
+
+  return (
+    <>
+      <div className="insight-drilldown-toolbar">
+        <div className="insight-drilldown-filters">
+          {DRILLDOWN_FILTERS.map((f) => (
+            <button
+              key={f.key}
+              type="button"
+              className={`insight-drilldown-chip ${filter === f.key ? "active" : ""}`}
+              onClick={() => setFilter(f.key)}
+            >
+              {f.label} ({counts[f.key].toLocaleString()})
+            </button>
+          ))}
+        </div>
+        {notListed > 0 && (
+          <span className="insight-table-count">
+            {all.length.toLocaleString()} unique of {counted.toLocaleString()} counted — the rest weren't recorded
+            individually for this date or were counted twice by the crawl
+          </span>
+        )}
+      </div>
+      <div className="insight-drilldown-scroll">
+        <table className="insight-table insight-table-nested">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Locality</th>
+              <th>Pincode</th>
+              <th>Status</th>
+              <th>Asking Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((p) => (
+              <tr key={p.key}>
+                <td>{p.name}</td>
+                <td>{p.locality || "—"}</td>
+                <td>{p.pincode || "—"}</td>
+                <td>
+                  <span className={`insight-status-pill ${p.available ? "available" : "sold-out"}`}>
+                    {p.available ? "Available" : "Sold Out"}
+                  </span>
+                </td>
+                <td>{p.minPrice != null ? `${p.currency || ""}${p.minPrice.toLocaleString()}` : "—"}</td>
+              </tr>
+            ))}
+            {rows.length === 0 && (
+              <tr>
+                <td colSpan={5} className="insight-chart-empty">
+                  No properties recorded for this filter.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
+    </>
+  );
+}
+
 function pct(fraction) {
   return fraction == null ? "—" : `${(fraction * 100).toFixed(1)}%`;
 }
@@ -225,7 +323,7 @@ export default function MarketSection({ market, overview, loading, error, onRetr
         <h3>Top Demand Markets</h3>
         <p className="insight-card-sub">
           Sold-Out and Available counts are exact (Amber's own filtered totals, the same method the homepage's Sold Out
-          counter uses). Click a city for up to 4 sample properties (locality &amp; pincode).
+          counter uses). Click a city to see every property in it (status, locality, pincode &amp; asking price).
         </p>
         <div className="insight-table-scroll">
           <table className="insight-table">
@@ -266,32 +364,7 @@ export default function MarketSection({ market, overview, loading, error, onRetr
                   {expandedCity === cityKey && (
                     <tr className="insight-table-drilldown-row">
                       <td colSpan={7}>
-                        <table className="insight-table insight-table-nested">
-                          <thead>
-                            <tr>
-                              <th>Property</th>
-                              <th>Locality</th>
-                              <th>Pincode</th>
-                              <th>Status</th>
-                              <th>Asking Price</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {c.properties.slice(0, 25).map((p) => (
-                              <tr key={p.id || p.slug}>
-                                <td>{p.name}</td>
-                                <td>{p.locality || "—"}</td>
-                                <td>{p.pincode || "—"}</td>
-                                <td>
-                                  <span className={`insight-status-pill ${p.available ? "available" : "sold-out"}`}>
-                                    {p.available ? "Available" : "Sold Out"}
-                                  </span>
-                                </td>
-                                <td>{p.minPrice != null ? `${p.currency || ""}${p.minPrice.toLocaleString()}` : "—"}</td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                        <CityDrilldown city={c} soldOutProperties={market.properties} />
                       </td>
                     </tr>
                   )}

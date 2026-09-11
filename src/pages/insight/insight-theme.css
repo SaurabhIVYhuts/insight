@@ -453,6 +453,16 @@
 .insight-table-drilldown-row td { background: var(--surface); padding: 12px; }
 .insight-table-nested { background: #fff; border-radius: var(--radius-md); overflow: hidden; }
 .insight-table-nested th, .insight-table-nested td { padding: 8px 10px; font-size: 0.78rem; }
+.insight-drilldown-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 10px; }
+.insight-drilldown-filters { display: flex; gap: 6px; flex-wrap: wrap; }
+.insight-drilldown-chip { border: 1.5px solid var(--border-soft); background: #fff; color: var(--ink-faint); border-radius: var(--radius-full); padding: 4px 12px; font-family: inherit; font-size: 0.74rem; font-weight: 700; cursor: pointer; }
+.insight-drilldown-chip.active { background: var(--ink); border-color: var(--ink); color: #fff; }
+/* Big cities list ~200 properties — scroll inside the row, header stays put.
+   The nested table's own overflow:hidden would make IT the sticky container,
+   so it's released here and the wrapper does the clipping instead. */
+.insight-drilldown-scroll { max-height: 420px; overflow: auto; border-radius: var(--radius-md); background: #fff; }
+.insight-drilldown-scroll .insight-table-nested { overflow: visible; }
+.insight-drilldown-scroll .insight-table-nested thead th { position: sticky; top: 0; background: #fff; z-index: 1; }
 
 .insight-table-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
 .insight-search-input { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1.5px solid var(--border-soft); border-radius: var(--radius-full); padding: 8px 14px; flex: 1; max-width: 320px; }

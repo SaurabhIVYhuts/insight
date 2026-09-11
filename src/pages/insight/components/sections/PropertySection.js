@@ -14,12 +14,11 @@ const COLUMNS = [
 ];
 
 // Sold-out properties come from market.properties — the crawl's full,
-// uncapped sold-out list (api/_lib/insightsMarket.js's bucketItem), not a
-// per-city sample. Available properties are still only ever the existing
-// up-to-4-per-city samples (cities[].properties never sampled that deeply
-// for available inventory — a full available list isn't kept, since this
-// system's focus is sold-out market intelligence). The two are merged and
-// de-duplicated so nothing previously visible here disappears.
+// uncapped sold-out list (api/_lib/insightsMarket.js's bucketItem).
+// Available properties come from cities[].properties, which now holds every
+// property per city — except on snapshots saved before that change, which
+// only carry up to 4 per city. The two are merged and de-duplicated so
+// nothing previously visible here disappears.
 function flattenProperties(market) {
   const citySamples = (market.cities || []).filter((c) => c.cached).flatMap((c) => c.properties);
   const fullSoldOut = market.properties || [];
@@ -82,8 +81,8 @@ export default function PropertySection({ market, loading, error, onRetry, onRes
       <div className="insight-section-intro">
         <h2>Property Performance</h2>
         <p>
-          Every sold-out property Amber's full catalog crawl has counted, plus up to 4 representative available
-          properties per market. Sold %, average booked price and revenue columns are omitted here — IVYHUTS does not
+          Every sold-out and available property Amber's full catalog crawl has counted (older dates list only a few
+          available properties per market). Sold %, average booked price and revenue columns are omitted here — IVYHUTS does not
           currently capture unit-level booking/transaction data.
         </p>
       </div>

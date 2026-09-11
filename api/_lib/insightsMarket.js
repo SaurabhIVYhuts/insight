@@ -67,13 +67,13 @@ const CRAWL_TTL_SECONDS = 26 * 60 * 60;
 // A tiny, purpose-built summary derived from `state.countries` — every real
 // country/city the full crawl has discovered so far, and NOTHING else (no
 // per-city price stats, no samples, no the full sold-out property list —
-// those stay in CRAWL_KEY's ~900KB blob). This is what api/_lib/searchIndex.js
+// those stay in CRAWL_KEY's ~1.6MB blob). This is what api/_lib/searchIndex.js
 // reads for comprehensive country/city coverage: a global search request
 // must never pay the cost of fetching/parsing the full crawl-state blob just
 // to answer "does this city exist" — confirmed live to take ~1-1.5s for the
 // full blob vs. this summary, which is two orders of magnitude smaller
 // (roughly a few hundred country/city name pairs, well under the crawl's own
-// nearly-1MB size). Kept as its OWN shared-store key (not derived on read
+// ~1.6MB size). Kept as its OWN shared-store key (not derived on read
 // from CRAWL_KEY) so a cold /api/search request only ever pays for a small,
 // fast Redis GET, never the large one.
 const LOCATION_INDEX_KEY = "search:locationIndex:v1";
@@ -515,22 +515,23 @@ function bucketItem(state, raw, available) {
         cityBucket.priceMax = cityBucket.priceMax == null ? item.minPrice : Math.max(cityBucket.priceMax, item.minPrice);
     }
     if (!cityBucket.currency && item.currency) cityBucket.currency = item.currency;
-    // At most 4 sample properties kept per city — enough for a
-    // representative preview in the drilldown table, never the full list.
-    if (cityBucket.samples.length < 4) {
-        cityBucket.samples.push({
-            id: item.id,
-            slug: item.slug,
-            name: item.name,
-            country,
-            city,
-            locality: city,
-            pincode: item.pincode,
-            available,
-            minPrice: item.minPrice,
-            currency: item.currency,
-        });
-    }
+    // Every property in the city (sold-out AND available) — the dashboard's
+    // city drilldown lists them all. Was capped at 4 samples per city; now
+    // bounded only by the catalog itself (~4.3k items at ~240 bytes each,
+    // ~1MB of the crawl-state blob). Field keeps its historical `samples`
+    // name so an in-flight crawl state stays readable across the deploy.
+    cityBucket.samples.push({
+        id: item.id,
+        slug: item.slug,
+        name: item.name,
+        country,
+        city,
+        locality: city,
+        pincode: item.pincode,
+        available,
+        minPrice: item.minPrice,
+        currency: item.currency,
+    });
 
     // Postcode-level bucketing — only when Amber actually returned one.
     // Many listings have no postal_code at all; a bucket keyed on null would
