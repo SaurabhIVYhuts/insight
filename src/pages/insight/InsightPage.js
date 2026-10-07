@@ -161,7 +161,7 @@ export default function InsightPage() {
     const timer = setTimeout(() => {
       backgroundPollCountRef.current += 1;
       loadMarket({ background: true });
-    }, 15000);
+    }, 60000);
     return () => clearTimeout(timer);
   }, [market, loadMarket, selectedDate]);
 
