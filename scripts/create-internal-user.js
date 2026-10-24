@@ -3,13 +3,13 @@
 // Market Insight dashboard.
 //
 // It does the two things the dashboard's auth chain needs:
-//   1. Redis  — creates the login credentials (api/_lib/userStore.js), the
+//   1. Shared store — creates the login credentials (api/_lib/userStore.js), the
 //      same record api/auth/signup.js would write.
 //   2. MongoDB — creates/updates the matching User document and sets its
 //      `role` to an internal role (api/_lib/models/User.js), which is what
 //      api/_lib/insightsDevAuth.js checks on every dashboard data call.
 //
-// If you share Redis + Mongo with the main ivyhuts-website app, any internal
+// If you share Mongo (with SHARED_STORE=mongo) with the main ivyhuts-website app, any internal
 // account that already works there works here too — you only need this for a
 // brand-new environment, or to promote an account you just signed up through
 // the /login form.
@@ -65,16 +65,16 @@ async function main() {
   const { connectToDatabase, disconnectFromDatabase } = require("../api/_lib/mongodb.js");
   const User = require("../api/_lib/models/User.js");
 
-  // 1. Redis login credentials
-  const existingRedis = await findUserByEmail(email).catch((err) => {
-    console.error("[redis] lookup failed:", err.message);
+  // 1. Login credentials (shared store)
+  const existingLogin = await findUserByEmail(email).catch((err) => {
+    console.error("[store] lookup failed:", err.message);
     process.exit(1);
   });
-  if (existingRedis) {
-    console.log(`[redis] login already exists for ${email} — leaving credentials untouched.`);
+  if (existingLogin) {
+    console.log(`[store] login already exists for ${email} — leaving credentials untouched.`);
   } else {
     await createUser({ name, email, password, phone });
-    console.log(`[redis] created login credentials for ${email}.`);
+    console.log(`[store] created login credentials for ${email}.`);
   }
 
   // 2. Mongo User document + role

@@ -20,13 +20,13 @@ It is the same code, unchanged:
 | --- | --- | --- |
 | Snapshot history | MongoDB `insightsnapshots` collection | One document per IST calendar day. Upserted by date. |
 | CRM "overview" numbers | MongoDB `leads` / `enquiries` / `users` | Read-only. Empty if you don't share the main app's DB. |
-| Amber catalog crawl state, locks | Upstash Redis (`insights:marketCrawl:*`) | Also feeds the main site's search/location index when the DB/Redis are shared. |
-| Login sessions, rate limits | Upstash Redis (`session:*`, `auth:*`) | Same store the main app's auth uses. |
+| Amber catalog crawl state, locks | MongoDB `kvstore` collection (`insights:marketCrawl:*`) | Also feeds the main site's search/location index, since both apps share the DB. |
+| Login credentials, sessions, rate limits | MongoDB `kvstore` collection (`user:*`, `session:*`, `auth:*`) | Same store the main app's auth uses. Requires `SHARED_STORE=mongo`. |
 | Role check (who may open the dashboard) | MongoDB `User.role` ∈ `MARKETING_AGENT` / `MARKETING_MANAGER` / `ADMIN` | Enforced server-side on every `/api/insights/*` data call. |
 | Daily 08:00 IST report email | Resend | Snapshot is still stored if email fails. |
 
-**This build is meant to point at the SAME MongoDB + Upstash Redis as the
-main app.** That gives you full history from day one, a working overview tab,
+**This build is meant to point at the SAME MongoDB as the main app, with
+`SHARED_STORE=mongo` set in both.** That gives you full history from day one, a working overview tab,
 and keeps the main site's search index warm. See `.env.example`.
 
 ---
@@ -49,8 +49,8 @@ until you have a session.
 
 ### Getting an account
 
-If your `.env.local` points at the main app's Redis + Mongo, any existing
-internal account works — just sign in at `/login`.
+If your `.env.local` points at the main app's Mongo with `SHARED_STORE=mongo`,
+any existing internal account works — just sign in at `/login`.
 
 Otherwise, create one:
 
@@ -62,7 +62,7 @@ npm run create-internal-user -- \
 
 (You can also sign up through the `/login` form and then run the same command
 without `--password` to promote that account — actually the command needs a
-password only when it has to create the Redis credentials; for an
+password only when it has to create the login credentials; for an
 already-signed-up account any placeholder is ignored once it sees the login
 already exists.)
 
@@ -90,7 +90,7 @@ already exists.)
    | Variable | Value |
    | --- | --- |
    | `MONGODB_URI` | same as the main app |
-   | `UPSTASH_REDIS_REST_URL` / `_TOKEN` | same as the main app |
+   | `SHARED_STORE` | `mongo` |
    | `AMBER_MAX_REQUESTS_PER_MINUTE` | `6` |
    | `CRON_SECRET` | a fresh random string |
    | `RESEND_API_KEY` | your Resend key |
@@ -114,7 +114,7 @@ already exists.)
    `{ "path": "/api/insights/advance-crawl", "schedule": "*/10 * * * *" }`.
 
    **Run the crawl-keeper in ONE place only** — either here or in the main
-   app, never both against the same Redis.
+   app, never both against the same database.
 
 ### Manually triggering the jobs
 
@@ -130,7 +130,7 @@ Out of the box this app has its own `/login`. If you'd rather the main site's
 existing login carry over so nobody signs in twice, in the **main app** add
 `Domain=.ivyhuts.com` to the session cookie (`api/_lib/session.js`,
 `buildSessionCookie` / `buildClearCookie`) and make sure both apps use the
-same `AUTH_*` settings and the same Redis. `SameSite=Lax` already works
+same `AUTH_*` settings and the same shared store. `SameSite=Lax` already works
 across subdomains.
 
 ---
