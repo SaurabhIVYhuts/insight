@@ -7,7 +7,7 @@ run as its own Cloudflare Worker on its own domain (`insight.ivyhuts.com`).
 It is the same code, unchanged:
 
 - **Frontend** — `src/pages/insight/*` served at `/insight`, plus a small
-  standalone `/login` screen.
+  public, with no login screen.
 - **Backend** — `api/insights/*` (dashboard endpoints + the daily digest and
   crawl-keeper jobs) and `api/auth/*` (login/logout/me/signup), sharing the
   same `api/_lib/*` support code as the main app.
@@ -22,7 +22,7 @@ It is the same code, unchanged:
 | CRM "overview" numbers | MongoDB `leads` / `enquiries` / `users` | Read-only. Empty if you don't share the main app's DB. |
 | Amber catalog crawl state, locks | MongoDB `kvstore` collection (`insights:marketCrawl:*`) | Also feeds the main site's search/location index, since both apps share the DB. |
 | Login credentials, sessions, rate limits | MongoDB `kvstore` collection (`user:*`, `session:*`, `auth:*`) | Same store the main app's auth uses. Requires `SHARED_STORE=mongo`. |
-| Role check (who may open the dashboard) | MongoDB `User.role` ∈ `MARKETING_AGENT` / `MARKETING_MANAGER` / `ADMIN` | Enforced server-side on every `/api/insights/*` data call. |
+| Who may open the dashboard | Anyone with the link | No login. |
 | Daily 08:00 IST report email | Resend | Snapshot is still stored if email fails. |
 
 **This build is meant to point at the SAME MongoDB as the main app, with
@@ -44,27 +44,11 @@ together (the local server runs the real `api/_lib/routes/**` handlers on
 port 3001; the CRA dev server proxies `/api/*` to it — see
 `src/setupProxy.js`).
 
-Open http://localhost:3000 → redirects to `/insight` → redirects to `/login`
-until you have a session.
+Open http://localhost:3000 → redirects to `/insight`.
 
-### Getting an account
-
-If your `.env.local` points at the main app's Mongo with `SHARED_STORE=mongo`,
-any existing internal account works — just sign in at `/login`.
-
-Otherwise, create one:
-
-```bash
-npm run create-internal-user -- \
-  --email you@ivyhuts.com --password 'a-strong-password' \
-  --name "Your Name" --phone 9876543210 --role ADMIN
-```
-
-(You can also sign up through the `/login` form and then run the same command
-without `--password` to promote that account — actually the command needs a
-password only when it has to create the login credentials; for an
-already-signed-up account any placeholder is ignored once it sees the login
-already exists.)
+**The dashboard is public.** Anyone with the link can see the market data and
+the CRM totals (see `api/_lib/insightsDevAuth.js`). The `/api/auth/*` routes
+still exist but the app no longer calls them.
 
 ---
 
@@ -107,17 +91,6 @@ Cloudflare Cron Triggers are off. Both jobs are `GET` requests with the header
 The main site's search depends on the crawl: it must run at least every 26 hours.
 **Run the crawl keeper in one place only** (here or in the main app).
 
-## Auth across `*.ivyhuts.com` (optional)
-
-Out of the box this app has its own `/login`. If you'd rather the main site's
-existing login carry over so nobody signs in twice, in the **main app** add
-`Domain=.ivyhuts.com` to the session cookie (`api/_lib/session.js`,
-`buildSessionCookie` / `buildClearCookie`) and make sure both apps use the
-same `AUTH_*` settings and the same shared store. `SameSite=Lax` already works
-across subdomains.
-
----
-
 ## After you've verified this works
 
 Then, in the **main `ivyhuts-website` repo**, remove the now-duplicated
@@ -145,7 +118,6 @@ api/
   _lib/                        shared handlers, models, gateways (unchanged copies)
 src/
   pages/insight/               the dashboard (unchanged copy)
-  pages/LoginPage.{js,css}     standalone sign-in (new)
   services/insightsApi.js      dashboard fetch client (unchanged copy)
   data/destinations.js         filter-bar country/city list (unchanged copy)
   styles/global.css            brand tokens the theme is built on (unchanged copy)

@@ -51,11 +51,18 @@ function computeSevenDayAvg(docs) {
 
 // null when there's no prior snapshot yet — the frontend renders
 // "Comparison unavailable" rather than inventing a delta.
-async function buildComparison(date) {
+// This endpoint is public, and a mail provider's error text can contain
+// recipient addresses — report only that sending failed.
+function toPublic(doc) {
+    if (!doc?.email?.error) return doc;
+    return { ...doc, email: { ...doc.email, error: "Email delivery failed" } };
+}
+
+
     try {
         const [previous, recent] = await Promise.all([getPreviousSnapshot(date), getRecentSnapshots(date, 7)]);
         if (!previous) return null;
-        return { previous, sevenDayAvg: computeSevenDayAvg(recent) };
+        return { previous: toPublic(previous), sevenDayAvg: computeSevenDayAvg(recent) };
     } catch (err) {
         console.error("[insights-snapshot] comparison lookup failed (non-fatal):", err.message);
         return null;
@@ -89,6 +96,6 @@ module.exports = withErrorHandling(async (req, res) => {
         return;
     }
 
-    const filtered = filterBreakdown(snapshot, { country, city });
+    const filtered = filterBreakdown(toPublic(snapshot), { country, city });
     sendSuccess(res, { mode: "historical", date, available: true, ...filtered, comparison: await buildComparison(date) });
 });
