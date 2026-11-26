@@ -1,0 +1,8 @@
+{
+  "id": "lausanne",
+  "type": "city",
+  "parentCountry": "switzerland",
+  "name": "Lausanne",
+  "dataLevel": "national",
+  "aliases": []
+}

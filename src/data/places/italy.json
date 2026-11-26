@@ -1,0 +1,186 @@
+{
+  "id": "italy",
+  "type": "country",
+  "name": "Italy",
+  "dataLevel": "national",
+  "aliases": [
+    "italia"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Italy",
+      "value": 110000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~30%",
+      "sub": "Undergraduate: ~70%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€50 national visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Albania",
+      "region": "Europe",
+      "value": 12000
+    },
+    {
+      "name": "Romania",
+      "region": "Europe",
+      "value": 8000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 7000
+    },
+    {
+      "name": "Iran",
+      "region": "Middle East",
+      "value": 6000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 5000
+    },
+    {
+      "name": "Turkey",
+      "region": "Middle East",
+      "value": 4000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Fall (main)",
+      "applyMonths": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "startMonths": [
+        9,
+        10
+      ]
+    },
+    {
+      "name": "Spring (limited)",
+      "applyMonths": [
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Albania",
+        "region": "Europe",
+        "value": 8400
+      },
+      {
+        "name": "Romania",
+        "region": "Europe",
+        "value": 5600
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 4900
+      },
+      {
+        "name": "Iran",
+        "region": "Middle East",
+        "value": 4200
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Albania",
+        "region": "Europe",
+        "value": 3600
+      },
+      {
+        "name": "Romania",
+        "region": "Europe",
+        "value": 2400
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 2100
+      },
+      {
+        "name": "Iran",
+        "region": "Middle East",
+        "value": 1800
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Italy-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~30%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €50 national visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €7,000 a year",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 2 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.universitaly.it/"
+  },
+  "sources": [
+    {
+      "title": "Universitaly",
+      "url": "https://www.universitaly.it/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

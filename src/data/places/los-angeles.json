@@ -1,0 +1,10 @@
+{
+  "id": "los-angeles",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Los Angeles",
+  "dataLevel": "national",
+  "aliases": [
+    "la"
+  ]
+}

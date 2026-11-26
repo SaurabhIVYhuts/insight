@@ -1,0 +1,8 @@
+{
+  "id": "copenhagen",
+  "type": "city",
+  "parentCountry": "denmark",
+  "name": "Copenhagen",
+  "dataLevel": "national",
+  "aliases": []
+}

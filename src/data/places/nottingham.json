@@ -1,0 +1,8 @@
+{
+  "id": "nottingham",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Nottingham",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "bern",
+  "type": "city",
+  "parentCountry": "switzerland",
+  "name": "Bern",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "hamilton",
+  "type": "city",
+  "parentCountry": "new-zealand",
+  "name": "Hamilton",
+  "dataLevel": "national",
+  "aliases": []
+}

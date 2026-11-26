@@ -1,0 +1,8 @@
+{
+  "id": "san-antonio",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "San Antonio",
+  "dataLevel": "national",
+  "aliases": []
+}

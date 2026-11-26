@@ -1,0 +1,8 @@
+{
+  "id": "eindhoven",
+  "type": "city",
+  "parentCountry": "netherlands",
+  "name": "Eindhoven",
+  "dataLevel": "national",
+  "aliases": []
+}

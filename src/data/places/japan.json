@@ -1,0 +1,185 @@
+{
+  "id": "japan",
+  "type": "country",
+  "name": "Japan",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Japan",
+      "value": 337000,
+      "sub": "2023",
+      "delta": 10,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~25%",
+      "sub": "Undergraduate: ~75%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~¥3,000 visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 120000
+    },
+    {
+      "name": "Nepal",
+      "region": "South Asia",
+      "value": 40000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 35000
+    },
+    {
+      "name": "South Korea",
+      "region": "Asia",
+      "value": 17000
+    },
+    {
+      "name": "Taiwan",
+      "region": "Asia",
+      "value": 11000
+    },
+    {
+      "name": "Indonesia",
+      "region": "Southeast Asia",
+      "value": 8000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "April (main)",
+      "applyMonths": [
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "startMonths": [
+        4
+      ]
+    },
+    {
+      "name": "October",
+      "applyMonths": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "startMonths": [
+        10
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 90000
+      },
+      {
+        "name": "Nepal",
+        "region": "South Asia",
+        "value": 30000
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 26300
+      },
+      {
+        "name": "South Korea",
+        "region": "Asia",
+        "value": 12800
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 30000
+      },
+      {
+        "name": "Nepal",
+        "region": "South Asia",
+        "value": 10000
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 8800
+      },
+      {
+        "name": "South Korea",
+        "region": "Asia",
+        "value": 4300
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Japan-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~25%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About ¥3,000 visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Proof of sufficient funds",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 3 months (Certificate of Eligibility)",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Up to 28 hours a week with permission",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.mofa.go.jp/j_info/visit/visa/"
+  },
+  "sources": [
+    {
+      "title": "Ministry of Foreign Affairs, Visas",
+      "url": "https://www.mofa.go.jp/j_info/visit/visa/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

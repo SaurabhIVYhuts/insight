@@ -1,0 +1,192 @@
+{
+  "id": "united-arab-emirates",
+  "type": "country",
+  "name": "United Arab Emirates",
+  "dataLevel": "national",
+  "aliases": [
+    "uae",
+    "emirates"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, United Arab Emirates",
+      "value": 200000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~20%",
+      "sub": "Undergraduate: ~80%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "Varies",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 35000
+    },
+    {
+      "name": "Pakistan",
+      "region": "South Asia",
+      "value": 20000
+    },
+    {
+      "name": "Egypt",
+      "region": "North Africa",
+      "value": 14000
+    },
+    {
+      "name": "Jordan",
+      "region": "Middle East",
+      "value": 10000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 8000
+    },
+    {
+      "name": "Iran",
+      "region": "Middle East",
+      "value": 8000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "January",
+      "applyMonths": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "startMonths": [
+        1,
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 28000
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 16000
+      },
+      {
+        "name": "Egypt",
+        "region": "North Africa",
+        "value": 11200
+      },
+      {
+        "name": "Jordan",
+        "region": "Middle East",
+        "value": 8000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 7000
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 4000
+      },
+      {
+        "name": "Egypt",
+        "region": "North Africa",
+        "value": 2800
+      },
+      {
+        "name": "Jordan",
+        "region": "Middle East",
+        "value": 2000
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "United Arab Emirates-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~20%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "Varies by emirate and sponsoring university",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Set by the sponsoring institution",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 2 to 4 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Part-time work needs a permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://icp.gov.ae/en/"
+  },
+  "sources": [
+    {
+      "title": "ICP, UAE visas",
+      "url": "https://icp.gov.ae/en/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

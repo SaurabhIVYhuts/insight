@@ -1,0 +1,8 @@
+{
+  "id": "nice",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Nice",
+  "dataLevel": "national",
+  "aliases": []
+}

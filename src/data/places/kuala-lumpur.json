@@ -1,0 +1,10 @@
+{
+  "id": "kuala-lumpur",
+  "type": "city",
+  "parentCountry": "malaysia",
+  "name": "Kuala Lumpur",
+  "dataLevel": "national",
+  "aliases": [
+    "kl"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "ghent",
+  "type": "city",
+  "parentCountry": "belgium",
+  "name": "Ghent",
+  "dataLevel": "national",
+  "aliases": []
+}

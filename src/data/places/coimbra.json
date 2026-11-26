@@ -1,0 +1,8 @@
+{
+  "id": "coimbra",
+  "type": "city",
+  "parentCountry": "portugal",
+  "name": "Coimbra",
+  "dataLevel": "national",
+  "aliases": []
+}

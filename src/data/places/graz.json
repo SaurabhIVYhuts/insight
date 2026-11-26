@@ -1,0 +1,8 @@
+{
+  "id": "graz",
+  "type": "city",
+  "parentCountry": "austria",
+  "name": "Graz",
+  "dataLevel": "national",
+  "aliases": []
+}

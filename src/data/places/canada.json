@@ -1,0 +1,204 @@
+{
+  "id": "canada",
+  "type": "country",
+  "name": "Canada",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Canada",
+      "value": 1000000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~35%",
+      "sub": "Undergraduate: ~65%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "CAD 150 study permit",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 320000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 60000
+    },
+    {
+      "name": "Philippines",
+      "region": "Southeast Asia",
+      "value": 50000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 35000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 30000
+    },
+    {
+      "name": "Mexico",
+      "region": "Latin America",
+      "value": 22000
+    },
+    {
+      "name": "Colombia",
+      "region": "Latin America",
+      "value": 20000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Fall (main)",
+      "applyMonths": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "Winter",
+      "applyMonths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startMonths": [
+        1
+      ]
+    },
+    {
+      "name": "Summer (limited)",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "startMonths": [
+        5
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 208000
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 39000
+      },
+      {
+        "name": "Philippines",
+        "region": "Southeast Asia",
+        "value": 32500
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 22800
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 112000
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 21000
+      },
+      {
+        "name": "Philippines",
+        "region": "Southeast Asia",
+        "value": 17500
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 12300
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Canada-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~35%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "CAD 150 study permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About CAD 22,900 living costs plus tuition and travel",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 4 to 12 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Up to 24 hours a week off campus",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html"
+  },
+  "sources": [
+    {
+      "title": "IRCC, Study in Canada",
+      "url": "https://www.canada.ca/en/immigration-refugees-citizenship/services/study-canada.html",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

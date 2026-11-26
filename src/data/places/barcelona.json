@@ -1,0 +1,8 @@
+{
+  "id": "barcelona",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Barcelona",
+  "dataLevel": "national",
+  "aliases": ["bcn"]
+}

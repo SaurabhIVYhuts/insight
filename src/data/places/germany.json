@@ -1,0 +1,189 @@
+{
+  "id": "germany",
+  "type": "country",
+  "name": "Germany",
+  "dataLevel": "national",
+  "aliases": [
+    "deutschland"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Germany",
+      "value": 402000,
+      "sub": "2023/24",
+      "delta": 4,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~35%",
+      "sub": "Undergraduate: ~65%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "€75 national visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 60000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 38000
+    },
+    {
+      "name": "Turkey",
+      "region": "Middle East",
+      "value": 14000
+    },
+    {
+      "name": "Syria",
+      "region": "Middle East",
+      "value": 13000
+    },
+    {
+      "name": "Austria",
+      "region": "Europe",
+      "value": 13000
+    },
+    {
+      "name": "Iran",
+      "region": "Middle East",
+      "value": 12000
+    },
+    {
+      "name": "Egypt",
+      "region": "North Africa",
+      "value": 12000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Winter semester (main)",
+      "applyMonths": [
+        5,
+        6,
+        7
+      ],
+      "startMonths": [
+        10
+      ]
+    },
+    {
+      "name": "Summer semester",
+      "applyMonths": [
+        11,
+        12,
+        1
+      ],
+      "startMonths": [
+        4
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 39000
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 24700
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 9100
+      },
+      {
+        "name": "Syria",
+        "region": "Middle East",
+        "value": 8500
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 21000
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 13300
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 4900
+      },
+      {
+        "name": "Syria",
+        "region": "Middle East",
+        "value": 4600
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Germany-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~35%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "€75 national visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €11,900 a year in a blocked account",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 6 to 12 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "120 full or 240 half days a year",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.study-in-germany.de/en/plan-your-studies/requirements/visa/"
+  },
+  "sources": [
+    {
+      "title": "DAAD, Study in Germany",
+      "url": "https://www.study-in-germany.de/en/plan-your-studies/requirements/visa/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

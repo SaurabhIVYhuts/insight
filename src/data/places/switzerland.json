@@ -1,0 +1,183 @@
+{
+  "id": "switzerland",
+  "type": "country",
+  "name": "Switzerland",
+  "dataLevel": "national",
+  "aliases": [
+    "swiss"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Switzerland",
+      "value": 62000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~50%",
+      "sub": "Undergraduate: ~50%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~CHF 88 national visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Germany",
+      "region": "Europe",
+      "value": 15000
+    },
+    {
+      "name": "France",
+      "region": "Europe",
+      "value": 6000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 5000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 3000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 2000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Fall (main)",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "Spring (limited)",
+      "applyMonths": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 7500
+      },
+      {
+        "name": "France",
+        "region": "Europe",
+        "value": 3000
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 2500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 1500
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 7500
+      },
+      {
+        "name": "France",
+        "region": "Europe",
+        "value": 3000
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 2500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 1500
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Switzerland-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~50%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About CHF 88 national visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About CHF 21,000 a year",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 2 to 3 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Up to 15 hours a week after the first 6 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.sem.admin.ch/sem/en/home.html"
+  },
+  "sources": [
+    {
+      "title": "State Secretariat for Migration",
+      "url": "https://www.sem.admin.ch/sem/en/home.html",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

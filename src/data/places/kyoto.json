@@ -1,0 +1,8 @@
+{
+  "id": "kyoto",
+  "type": "city",
+  "parentCountry": "japan",
+  "name": "Kyoto",
+  "dataLevel": "national",
+  "aliases": []
+}

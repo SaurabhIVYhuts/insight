@@ -1,0 +1,8 @@
+{
+  "id": "nantes",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Nantes",
+  "dataLevel": "national",
+  "aliases": []
+}

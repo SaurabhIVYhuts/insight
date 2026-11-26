@@ -1,0 +1,180 @@
+{
+  "id": "south-korea",
+  "type": "country",
+  "name": "South Korea",
+  "dataLevel": "national",
+  "aliases": [
+    "korea"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, South Korea",
+      "value": 230000,
+      "sub": "2023",
+      "delta": 15,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~25%",
+      "sub": "Undergraduate: ~75%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~KRW 60,000 visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 70000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 60000
+    },
+    {
+      "name": "Uzbekistan",
+      "region": "Asia",
+      "value": 17000
+    },
+    {
+      "name": "Mongolia",
+      "region": "Asia",
+      "value": 12000
+    },
+    {
+      "name": "Japan",
+      "region": "Asia",
+      "value": 5000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Spring (March)",
+      "applyMonths": [
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        3
+      ]
+    },
+    {
+      "name": "Fall (September)",
+      "applyMonths": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "startMonths": [
+        9
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 52500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 45000
+      },
+      {
+        "name": "Uzbekistan",
+        "region": "Asia",
+        "value": 12800
+      },
+      {
+        "name": "Mongolia",
+        "region": "Asia",
+        "value": 9000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 17500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 15000
+      },
+      {
+        "name": "Uzbekistan",
+        "region": "Asia",
+        "value": 4300
+      },
+      {
+        "name": "Mongolia",
+        "region": "Asia",
+        "value": 3000
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "South Korea-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~25%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About KRW 60,000 visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About USD 10,000 bank statement, set by the institution",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 2 to 4 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week after 6 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.studyinkorea.go.kr/en/main.do"
+  },
+  "sources": [
+    {
+      "title": "Study in Korea",
+      "url": "https://www.studyinkorea.go.kr/en/main.do",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

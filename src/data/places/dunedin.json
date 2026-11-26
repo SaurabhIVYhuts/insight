@@ -1,0 +1,8 @@
+{
+  "id": "dunedin",
+  "type": "city",
+  "parentCountry": "new-zealand",
+  "name": "Dunedin",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lancaster",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Lancaster",
+  "dataLevel": "national",
+  "aliases": []
+}

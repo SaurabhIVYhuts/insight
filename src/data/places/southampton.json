@@ -1,0 +1,8 @@
+{
+  "id": "southampton",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Southampton",
+  "dataLevel": "national",
+  "aliases": []
+}

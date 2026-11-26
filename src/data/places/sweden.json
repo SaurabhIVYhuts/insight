@@ -1,0 +1,181 @@
+{
+  "id": "sweden",
+  "type": "country",
+  "name": "Sweden",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Sweden",
+      "value": 40000,
+      "sub": "2023/24",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~60%",
+      "sub": "Undergraduate: ~40%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~SEK 1,500 residence permit",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 4000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 3000
+    },
+    {
+      "name": "Germany",
+      "region": "Europe",
+      "value": 2500
+    },
+    {
+      "name": "Iran",
+      "region": "Middle East",
+      "value": 2000
+    },
+    {
+      "name": "Pakistan",
+      "region": "South Asia",
+      "value": 1800
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Autumn (main)",
+      "applyMonths": [
+        10,
+        11,
+        12,
+        1
+      ],
+      "startMonths": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "Spring (limited)",
+      "applyMonths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 1600
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1200
+      },
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 1000
+      },
+      {
+        "name": "Iran",
+        "region": "Middle East",
+        "value": 800
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 2400
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1800
+      },
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 1500
+      },
+      {
+        "name": "Iran",
+        "region": "Middle East",
+        "value": 1200
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Sweden-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~60%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About SEK 1,500 residence permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About SEK 10,000 a month",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 4 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "No fixed hour limit while studying",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.migrationsverket.se/en/"
+  },
+  "sources": [
+    {
+      "title": "Swedish Migration Agency",
+      "url": "https://www.migrationsverket.se/en/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

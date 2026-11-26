@@ -1,0 +1,8 @@
+{
+  "id": "brighton",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Brighton",
+  "dataLevel": "national",
+  "aliases": []
+}

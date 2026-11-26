@@ -1,0 +1,8 @@
+{
+  "id": "durham",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Durham",
+  "dataLevel": "national",
+  "aliases": []
+}

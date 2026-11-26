@@ -1,0 +1,8 @@
+{
+  "id": "aachen",
+  "type": "city",
+  "parentCountry": "germany",
+  "name": "Aachen",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "turku",
+  "type": "city",
+  "parentCountry": "finland",
+  "name": "Turku",
+  "dataLevel": "national",
+  "aliases": []
+}

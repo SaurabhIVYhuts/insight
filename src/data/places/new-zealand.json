@@ -1,0 +1,188 @@
+{
+  "id": "new-zealand",
+  "type": "country",
+  "name": "New Zealand",
+  "dataLevel": "national",
+  "aliases": [
+    "nz"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, New Zealand",
+      "value": 83000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~25%",
+      "sub": "Undergraduate: ~75%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~NZD 375",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 15000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 11000
+    },
+    {
+      "name": "Philippines",
+      "region": "Southeast Asia",
+      "value": 6000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 4000
+    },
+    {
+      "name": "Japan",
+      "region": "Asia",
+      "value": 4000
+    },
+    {
+      "name": "South Korea",
+      "region": "Asia",
+      "value": 3000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "February (main)",
+      "applyMonths": [
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "startMonths": [
+        2
+      ]
+    },
+    {
+      "name": "July",
+      "applyMonths": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "startMonths": [
+        7
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 11300
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 8300
+      },
+      {
+        "name": "Philippines",
+        "region": "Southeast Asia",
+        "value": 4500
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 3000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 3800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 2800
+      },
+      {
+        "name": "Philippines",
+        "region": "Southeast Asia",
+        "value": 1500
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 1000
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "New Zealand-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~25%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About NZD 375",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About NZD 20,000 a year plus tuition",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 4 to 8 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Up to 25 hours a week",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.immigration.govt.nz/new-zealand-visas/visas/visa/student-visa"
+  },
+  "sources": [
+    {
+      "title": "Immigration New Zealand, Student visa",
+      "url": "https://www.immigration.govt.nz/new-zealand-visas/visas/visa/student-visa",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

@@ -1,4 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
+import { useSearchParams } from "react-router-dom";
+import CalendarSection from "./components/calendar/CalendarSection";
 import InsightSidebar from "./components/InsightSidebar";
 import InsightHeader from "./components/InsightHeader";
 import FilterBar, { rangeFromPreset } from "./components/FilterBar";
@@ -13,7 +15,21 @@ import { getInsightsOverview, getInsightsSnapshot, getInsightsSoldOutTrend } fro
 import "./insight-theme.css";
 
 export default function InsightPage() {
-  const [activeTab, setActiveTab] = useState("market");
+  // The Calendar tab keeps its selection in the URL (?tab=calendar&place=...)
+  // so a view can be shared; other tabs keep the URL clean.
+  const [tabState, setTabState] = useState("market");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeTab = searchParams.get("tab") === "calendar" ? "calendar" : tabState;
+  const setActiveTab = (key) => {
+    setTabState(key);
+    if (key === "calendar") {
+      const next = new URLSearchParams(searchParams);
+      next.set("tab", "calendar");
+      setSearchParams(next);
+    } else if (searchParams.has("tab") || searchParams.has("place")) {
+      setSearchParams({});
+    }
+  };
   const [mobileOpen, setMobileOpen] = useState(false);
   const [filters, setFilters] = useState({ rangeKey: "30d", ...rangeFromPreset("30d") });
   // null = today, live. "YYYY-MM-DD" = a historical date picked from the
@@ -152,10 +168,12 @@ export default function InsightPage() {
       <InsightSidebar active={activeTab} onSelect={setActiveTab} mobileOpen={mobileOpen} onCloseMobile={() => setMobileOpen(false)} />
       <div className="insight-main">
         <InsightHeader onRefresh={handleRefresh} refreshing={refreshing} onOpenMobileMenu={() => setMobileOpen(true)} />
-        <FilterBar filters={filters} onChange={setFilters} onReset={resetFilters} sourceOptions={sourceOptions}>
-          <InsightCalendar selectedDate={selectedDate} onSelect={setSelectedDate} />
-        </FilterBar>
-        {market && (
+        {activeTab !== "calendar" && (
+          <FilterBar filters={filters} onChange={setFilters} onReset={resetFilters} sourceOptions={sourceOptions}>
+            <InsightCalendar selectedDate={selectedDate} onSelect={setSelectedDate} />
+          </FilterBar>
+        )}
+        {market && activeTab !== "calendar" && (
           <ModeBanner
             mode={market.mode || (selectedDate ? "historical" : "live")}
             date={market.date || selectedDate}
@@ -167,6 +185,7 @@ export default function InsightPage() {
           {activeTab === "market" && (
             <MarketSection market={market} overview={overview} loading={loadingMarket} error={errorMarket} onRetry={loadMarket} onResetFilters={resetFilters} />
           )}
+          {activeTab === "calendar" && <CalendarSection />}
           {activeTab === "trends" && <TrendSection trend={trend} error={errorTrend} onRetry={loadTrend} onResetFilters={resetFilters} />}
           {activeTab === "pricing" && (
             <PricingSection market={marketForLegacyTabs} loading={loadingMarket} error={errorMarket} onRetry={loadMarket} onResetFilters={resetFilters} />

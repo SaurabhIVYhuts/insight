@@ -1,0 +1,8 @@
+{
+  "id": "lyon",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Lyon",
+  "dataLevel": "national",
+  "aliases": []
+}

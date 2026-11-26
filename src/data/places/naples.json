@@ -1,0 +1,8 @@
+{
+  "id": "naples",
+  "type": "city",
+  "parentCountry": "italy",
+  "name": "Naples",
+  "dataLevel": "national",
+  "aliases": []
+}

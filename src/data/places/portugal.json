@@ -1,0 +1,180 @@
+{
+  "id": "portugal",
+  "type": "country",
+  "name": "Portugal",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Portugal",
+      "value": 90000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~35%",
+      "sub": "Undergraduate: ~65%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€90 national visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Brazil",
+      "region": "Latin America",
+      "value": 30000
+    },
+    {
+      "name": "Angola",
+      "region": "Sub-Saharan Africa",
+      "value": 8000
+    },
+    {
+      "name": "Cape Verde",
+      "region": "Sub-Saharan Africa",
+      "value": 6000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 3000
+    },
+    {
+      "name": "Spain",
+      "region": "Europe",
+      "value": 3000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "February (limited)",
+      "applyMonths": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "startMonths": [
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Brazil",
+        "region": "Latin America",
+        "value": 19500
+      },
+      {
+        "name": "Angola",
+        "region": "Sub-Saharan Africa",
+        "value": 5200
+      },
+      {
+        "name": "Cape Verde",
+        "region": "Sub-Saharan Africa",
+        "value": 3900
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 2000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Brazil",
+        "region": "Latin America",
+        "value": 10500
+      },
+      {
+        "name": "Angola",
+        "region": "Sub-Saharan Africa",
+        "value": 2800
+      },
+      {
+        "name": "Cape Verde",
+        "region": "Sub-Saharan Africa",
+        "value": 2100
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 1100
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Portugal-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~35%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €90 national visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About the monthly minimum wage",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 2 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Part-time allowed with a residence permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://vistos.mne.gov.pt/en/"
+  },
+  "sources": [
+    {
+      "title": "Portuguese visa portal",
+      "url": "https://vistos.mne.gov.pt/en/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

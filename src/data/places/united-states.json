@@ -1,0 +1,201 @@
+{
+  "id": "united-states",
+  "type": "country",
+  "name": "United States",
+  "dataLevel": "national",
+  "aliases": [
+    "usa",
+    "us",
+    "america"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, United States",
+      "value": 1180000,
+      "sub": "2024/25",
+      "delta": 4.5,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~50%",
+      "sub": "Undergraduate: ~50%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "US$185 visa fee",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 363000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 266000
+    },
+    {
+      "name": "South Korea",
+      "region": "Asia",
+      "value": 43000
+    },
+    {
+      "name": "Canada",
+      "region": "North America",
+      "value": 28000
+    },
+    {
+      "name": "Taiwan",
+      "region": "Asia",
+      "value": 23000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 21000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 20000
+    },
+    {
+      "name": "Brazil",
+      "region": "Latin America",
+      "value": 18000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Fall (main)",
+      "applyMonths": [
+        9,
+        10,
+        11,
+        12,
+        1
+      ],
+      "startMonths": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "Spring",
+      "applyMonths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 181500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 133000
+      },
+      {
+        "name": "South Korea",
+        "region": "Asia",
+        "value": 21500
+      },
+      {
+        "name": "Canada",
+        "region": "North America",
+        "value": 14000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 181500
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 133000
+      },
+      {
+        "name": "South Korea",
+        "region": "Asia",
+        "value": 21500
+      },
+      {
+        "name": "Canada",
+        "region": "North America",
+        "value": 14000
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "United States-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~50%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "US$185 visa fee plus US$350 SEVIS fee",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Proof of first-year costs shown on the I-20",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Weeks to months, varies by consulate",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week on campus",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://travel.state.gov/content/travel/en/us-visas/study.html"
+  },
+  "sources": [
+    {
+      "title": "US Department of State, Study and Exchange",
+      "url": "https://travel.state.gov/content/travel/en/us-visas/study.html",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

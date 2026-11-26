@@ -1,0 +1,8 @@
+{
+  "id": "penang",
+  "type": "city",
+  "parentCountry": "malaysia",
+  "name": "Penang",
+  "dataLevel": "national",
+  "aliases": []
+}

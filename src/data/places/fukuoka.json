@@ -1,0 +1,8 @@
+{
+  "id": "fukuoka",
+  "type": "city",
+  "parentCountry": "japan",
+  "name": "Fukuoka",
+  "dataLevel": "national",
+  "aliases": []
+}

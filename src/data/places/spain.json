@@ -1,0 +1,64 @@
+{
+  "id": "spain",
+  "type": "country",
+  "name": "Spain",
+  "dataLevel": "national",
+  "aliases": ["espana", "españa"],
+  "placeholder": true,
+  "kpis": [
+    { "label": "Incoming students, Spain", "value": 149280, "sub": "2023/24", "delta": null },
+    { "label": "Degree-seeking", "value": "59%", "sub": "Exchange: 41%", "delta": null },
+    { "label": "Foreign share, Masters", "value": "27.1%", "sub": "Bachelors: 6.9%", "delta": null }
+  ],
+  "sourceCountries": [
+    { "name": "Italy", "region": "Europe", "value": 23810 },
+    { "name": "Colombia", "region": "Latin America", "value": 23500 },
+    { "name": "France", "region": "Europe", "value": 19700 },
+    { "name": "Ecuador", "region": "Latin America", "value": 17100 },
+    { "name": "China", "region": "Asia", "value": 12500 },
+    { "name": "United States", "region": "North America", "value": 9800 },
+    { "name": "Morocco", "region": "North Africa", "value": 7200 }
+  ],
+  "intakes": [
+    { "name": "Fall (main)", "applyMonths": [1, 2, 3, 4, 5, 6, 7], "startMonths": [9, 10] },
+    { "name": "Spring (limited)", "applyMonths": [7, 8, 9, 10], "startMonths": [2] }
+  ],
+  "byLevel": {
+    "degree": [
+      { "name": "Colombia", "region": "Latin America", "value": 18302 },
+      { "name": "Ecuador", "region": "Latin America", "value": 15000 },
+      { "name": "France", "region": "Europe", "value": 1500 }
+    ],
+    "exchange": [
+      { "name": "Italy", "region": "Europe", "value": 11041 },
+      { "name": "United States", "region": "North America", "value": 7200 },
+      { "name": "Germany", "region": "Europe", "value": 7000 },
+      { "name": "France", "region": "Europe", "value": 6200 }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Spain-wide, degree and exchange combined. Source: Spain's Ministry of Science, Innovation and Universities; ICEF Monitor. Morocco is the figure the ministry lists for North Africa. Bar values other than Italy are read from a chart and approximate."
+    },
+    "intakes": { "note": "Typical windows. Public universities such as UB commonly close in June or July; private universities admit on a rolling basis; some Masters close earlier." },
+    "byLevel": {
+      "estimated": true,
+      "titles": { "degree": "Degree-seeking (non-resident enrolments)", "exchange": "Exchange students" },
+      "note": "Top source countries per study type, 2023/24. Approximate values, to be replaced with ministry tables."
+    }
+  },
+  "visa": {
+    "fee": { "value": "€80 (national D visa, typical)", "asOf": "2026-11", "source": "Spanish consulates", "estimated": true },
+    "financialProof": { "value": "100% of IPREM per month (about €600), as a guide", "asOf": "2026-11", "estimated": true },
+    "processing": { "value": "Typically 1 to 3 months", "asOf": "2026-11", "estimated": true },
+    "workRights": { "value": "Up to 30 hours a week alongside study", "asOf": "2026-11" },
+    "notes": "Placeholder figures. Confirm every value with the consulate before advising a student.",
+    "officialUrl": "https://www.exteriores.gob.es/"
+  },
+  "sources": [
+    { "title": "Spain Ministry of Science, Innovation and Universities, university statistics", "url": "https://www.universidades.gob.es/", "year": 2024 },
+    { "title": "ICEF Monitor, Spain market profile", "url": "https://monitor.icef.com/", "year": 2024 }
+  ],
+  "lastUpdated": "2026-11-21"
+}

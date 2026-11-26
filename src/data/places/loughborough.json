@@ -1,0 +1,8 @@
+{
+  "id": "loughborough",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Loughborough",
+  "dataLevel": "national",
+  "aliases": []
+}

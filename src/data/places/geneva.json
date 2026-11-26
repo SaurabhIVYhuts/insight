@@ -1,0 +1,8 @@
+{
+  "id": "geneva",
+  "type": "city",
+  "parentCountry": "switzerland",
+  "name": "Geneva",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "limerick",
+  "type": "city",
+  "parentCountry": "ireland",
+  "name": "Limerick",
+  "dataLevel": "national",
+  "aliases": []
+}

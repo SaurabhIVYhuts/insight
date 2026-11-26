@@ -1,0 +1,8 @@
+{
+  "id": "daejeon",
+  "type": "city",
+  "parentCountry": "south-korea",
+  "name": "Daejeon",
+  "dataLevel": "national",
+  "aliases": []
+}

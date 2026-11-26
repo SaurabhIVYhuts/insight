@@ -1,0 +1,8 @@
+{
+  "id": "auckland",
+  "type": "city",
+  "parentCountry": "new-zealand",
+  "name": "Auckland",
+  "dataLevel": "national",
+  "aliases": []
+}

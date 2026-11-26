@@ -1,0 +1,8 @@
+{
+  "id": "odense",
+  "type": "city",
+  "parentCountry": "denmark",
+  "name": "Odense",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "granada",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Granada",
+  "dataLevel": "national",
+  "aliases": []
+}

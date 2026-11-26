@@ -1,0 +1,193 @@
+{
+  "id": "france",
+  "type": "country",
+  "name": "France",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, France",
+      "value": 443000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~45%",
+      "sub": "Undergraduate: ~55%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€99 long-stay visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Morocco",
+      "region": "North Africa",
+      "value": 40000
+    },
+    {
+      "name": "Algeria",
+      "region": "North Africa",
+      "value": 36000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 28000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 21000
+    },
+    {
+      "name": "Senegal",
+      "region": "Sub-Saharan Africa",
+      "value": 19000
+    },
+    {
+      "name": "Tunisia",
+      "region": "North Africa",
+      "value": 14000
+    },
+    {
+      "name": "Germany",
+      "region": "Europe",
+      "value": 12000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "February (limited)",
+      "applyMonths": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        1,
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Morocco",
+        "region": "North Africa",
+        "value": 22000
+      },
+      {
+        "name": "Algeria",
+        "region": "North Africa",
+        "value": 19800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 15400
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 11600
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Morocco",
+        "region": "North Africa",
+        "value": 18000
+      },
+      {
+        "name": "Algeria",
+        "region": "North Africa",
+        "value": 16200
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 12600
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 9500
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "France-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~45%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €99 long-stay visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €615 a month",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 2 to 4 weeks after Campus France approval",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "964 hours a year",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.campusfrance.org/en"
+  },
+  "sources": [
+    {
+      "title": "Campus France",
+      "url": "https://www.campusfrance.org/en",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

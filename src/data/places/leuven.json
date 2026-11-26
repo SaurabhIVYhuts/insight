@@ -1,0 +1,8 @@
+{
+  "id": "leuven",
+  "type": "city",
+  "parentCountry": "belgium",
+  "name": "Leuven",
+  "dataLevel": "national",
+  "aliases": []
+}

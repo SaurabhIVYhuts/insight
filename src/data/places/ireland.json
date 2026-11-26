@@ -1,0 +1,189 @@
+{
+  "id": "ireland",
+  "type": "country",
+  "name": "Ireland",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Ireland",
+      "value": 40000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~45%",
+      "sub": "Undergraduate: ~55%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€60 single-entry visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "United States",
+      "region": "North America",
+      "value": 6000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 5000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 4000
+    },
+    {
+      "name": "Malaysia",
+      "region": "Southeast Asia",
+      "value": 2000
+    },
+    {
+      "name": "Brazil",
+      "region": "Latin America",
+      "value": 2000
+    },
+    {
+      "name": "France",
+      "region": "Europe",
+      "value": 2000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "January (limited)",
+      "applyMonths": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "United States",
+        "region": "North America",
+        "value": 3300
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 2800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 2200
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 1100
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "United States",
+        "region": "North America",
+        "value": 2700
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 2300
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 1800
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 900
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Ireland-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~45%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €60 single-entry visa (where required)",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €10,000 a year",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 4 to 8 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week in term time, 40 in holidays",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.irishimmigration.ie/coming-to-study-in-ireland/"
+  },
+  "sources": [
+    {
+      "title": "Irish Immigration Service, Study",
+      "url": "https://www.irishimmigration.ie/coming-to-study-in-ireland/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

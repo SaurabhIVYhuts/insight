@@ -1,0 +1,8 @@
+{
+  "id": "brisbane",
+  "type": "city",
+  "parentCountry": "australia",
+  "name": "Brisbane",
+  "dataLevel": "national",
+  "aliases": []
+}

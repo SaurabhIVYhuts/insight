@@ -1,0 +1,181 @@
+{
+  "id": "poland",
+  "type": "country",
+  "name": "Poland",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Poland",
+      "value": 100000,
+      "sub": "2023/24",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~25%",
+      "sub": "Undergraduate: ~75%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€80 national visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Ukraine",
+      "region": "Europe",
+      "value": 40000
+    },
+    {
+      "name": "Belarus",
+      "region": "Europe",
+      "value": 12000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 6000
+    },
+    {
+      "name": "Turkey",
+      "region": "Middle East",
+      "value": 5000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 2000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Winter semester (main)",
+      "applyMonths": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "startMonths": [
+        10
+      ]
+    },
+    {
+      "name": "Summer semester",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "startMonths": [
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Ukraine",
+        "region": "Europe",
+        "value": 30000
+      },
+      {
+        "name": "Belarus",
+        "region": "Europe",
+        "value": 9000
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 4500
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 3800
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Ukraine",
+        "region": "Europe",
+        "value": 10000
+      },
+      {
+        "name": "Belarus",
+        "region": "Europe",
+        "value": 3000
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1500
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 1300
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Poland-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~25%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €80 national visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Proof of monthly means; see the official site",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 2 to 4 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Allowed with a valid student residence permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.gov.pl/web/udsc-en"
+  },
+  "sources": [
+    {
+      "title": "Office for Foreigners (UDSC)",
+      "url": "https://www.gov.pl/web/udsc-en",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

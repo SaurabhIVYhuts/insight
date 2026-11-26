@@ -1,0 +1,8 @@
+{
+  "id": "atlanta",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Atlanta",
+  "dataLevel": "national",
+  "aliases": []
+}

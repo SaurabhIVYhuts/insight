@@ -1,0 +1,8 @@
+{
+  "id": "rome",
+  "type": "city",
+  "parentCountry": "italy",
+  "name": "Rome",
+  "dataLevel": "national",
+  "aliases": []
+}

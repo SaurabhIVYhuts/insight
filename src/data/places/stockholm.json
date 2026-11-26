@@ -1,0 +1,8 @@
+{
+  "id": "stockholm",
+  "type": "city",
+  "parentCountry": "sweden",
+  "name": "Stockholm",
+  "dataLevel": "national",
+  "aliases": []
+}

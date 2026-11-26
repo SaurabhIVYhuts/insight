@@ -1,0 +1,76 @@
+{
+  "id": "australia",
+  "type": "country",
+  "name": "Australia",
+  "dataLevel": "national",
+  "placeholder": true,
+  "kpis": [
+    { "label": "International students", "value": 853000, "sub": "2024 (enrolments)", "delta": -4.1, "estimated": true },
+    { "label": "Higher education share", "value": "58%", "sub": "VET: 24%", "delta": null, "estimated": true },
+    { "label": "Student visa fee", "value": "AUD 2,000", "sub": "Subclass 500, 2025", "delta": null }
+  ],
+  "sourceCountries": [
+    { "name": "China", "region": "Asia", "value": 160000 },
+    { "name": "India", "region": "South Asia", "value": 140000 },
+    { "name": "Nepal", "region": "South Asia", "value": 65000 },
+    { "name": "Vietnam", "region": "Southeast Asia", "value": 35000 },
+    { "name": "Colombia", "region": "Latin America", "value": 31000 },
+    { "name": "Philippines", "region": "Southeast Asia", "value": 28000 },
+    { "name": "Brazil", "region": "Latin America", "value": 24000 },
+    { "name": "United Kingdom", "region": "Europe", "value": 9000 }
+  ],
+  "intakes": [
+    { "name": "February (main)", "applyMonths": [9, 10, 11, 12, 1], "startMonths": [2, 3] },
+    { "name": "July", "applyMonths": [3, 4, 5, 6], "startMonths": [7] },
+    { "name": "November (limited)", "applyMonths": [6, 7, 8, 9], "startMonths": [11] }
+  ],
+  "byLevel": {
+    "degree": [
+      { "name": "China", "region": "Asia", "value": 120000 },
+      { "name": "India", "region": "South Asia", "value": 95000 },
+      { "name": "Nepal", "region": "South Asia", "value": 40000 }
+    ],
+    "exchange": [
+      { "name": "United States", "region": "North America", "value": 4200 },
+      { "name": "Germany", "region": "Europe", "value": 3100 },
+      { "name": "France", "region": "Europe", "value": 2600 }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "National, all sectors. PLACEHOLDER figures for layout testing, not published numbers. Replace with Department of Education international student data."
+    },
+    "intakes": { "note": "Typical windows. Applications that cross the year end (Sep to Jan) wrap into the previous year. Each university sets its own deadlines." },
+    "byLevel": {
+      "estimated": true,
+      "titles": { "degree": "Award courses (degree-level)", "exchange": "Study abroad / exchange" },
+      "note": "PLACEHOLDER figures for layout testing."
+    }
+  },
+  "visa": {
+    "fee": { "value": "AUD 2,000", "asOf": "2025-07", "source": "Home Affairs" },
+    "financialProof": { "value": "Proof of funds is reviewed per application; check the current living-cost figure", "asOf": "2026-11", "estimated": true },
+    "processing": { "value": "Typically 4 to 12 weeks", "asOf": "2026-11", "estimated": true },
+    "workRights": { "value": "48 hours a fortnight during term", "asOf": "2025-07", "source": "Home Affairs" },
+    "grantRates": {
+      "title": "Visa grant rate by nationality",
+      "unit": "%",
+      "asOf": "2026-11",
+      "estimated": true,
+      "items": [
+        { "name": "China", "region": "Asia", "value": 88 },
+        { "name": "India", "region": "South Asia", "value": 76 },
+        { "name": "Nepal", "region": "South Asia", "value": 71 },
+        { "name": "Colombia", "region": "Latin America", "value": 82 }
+      ]
+    },
+    "notes": "PLACEHOLDER grant rates. Rules and rates change often, so verify on the official site.",
+    "officialUrl": "https://immi.homeaffairs.gov.au/"
+  },
+  "sources": [
+    { "title": "Department of Education, international student monthly summary", "url": "https://www.education.gov.au/international-education-data-and-research", "year": 2024 },
+    { "title": "Department of Home Affairs, Student visa (subclass 500)", "url": "https://immi.homeaffairs.gov.au/", "year": 2025 }
+  ],
+  "lastUpdated": "2026-11-21"
+}

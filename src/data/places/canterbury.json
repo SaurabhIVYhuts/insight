@@ -1,0 +1,8 @@
+{
+  "id": "canterbury",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Canterbury",
+  "dataLevel": "national",
+  "aliases": []
+}

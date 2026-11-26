@@ -1,0 +1,8 @@
+{
+  "id": "zurich",
+  "type": "city",
+  "parentCountry": "switzerland",
+  "name": "Zurich",
+  "dataLevel": "national",
+  "aliases": []
+}

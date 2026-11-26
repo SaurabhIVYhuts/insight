@@ -1,0 +1,8 @@
+{
+  "id": "bilbao",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Bilbao",
+  "dataLevel": "national",
+  "aliases": []
+}

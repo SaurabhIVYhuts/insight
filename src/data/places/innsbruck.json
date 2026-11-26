@@ -1,0 +1,8 @@
+{
+  "id": "innsbruck",
+  "type": "city",
+  "parentCountry": "austria",
+  "name": "Innsbruck",
+  "dataLevel": "national",
+  "aliases": []
+}

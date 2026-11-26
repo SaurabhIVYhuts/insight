@@ -1,0 +1,8 @@
+{
+  "id": "malaga",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Malaga",
+  "dataLevel": "national",
+  "aliases": []
+}

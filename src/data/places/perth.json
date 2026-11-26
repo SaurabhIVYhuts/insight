@@ -1,0 +1,8 @@
+{
+  "id": "perth",
+  "type": "city",
+  "parentCountry": "australia",
+  "name": "Perth",
+  "dataLevel": "national",
+  "aliases": []
+}

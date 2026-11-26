@@ -1,0 +1,8 @@
+{
+  "id": "reading",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Reading",
+  "dataLevel": "national",
+  "aliases": []
+}

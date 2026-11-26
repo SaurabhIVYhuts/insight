@@ -1,0 +1,8 @@
+{
+  "id": "salamanca",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Salamanca",
+  "dataLevel": "national",
+  "aliases": []
+}

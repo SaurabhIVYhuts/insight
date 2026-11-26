@@ -1,0 +1,8 @@
+{
+  "id": "frankfurt",
+  "type": "city",
+  "parentCountry": "germany",
+  "name": "Frankfurt",
+  "dataLevel": "national",
+  "aliases": []
+}

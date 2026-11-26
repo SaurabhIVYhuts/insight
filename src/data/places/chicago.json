@@ -1,0 +1,8 @@
+{
+  "id": "chicago",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Chicago",
+  "dataLevel": "national",
+  "aliases": []
+}

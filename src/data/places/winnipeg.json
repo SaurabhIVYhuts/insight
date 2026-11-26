@@ -1,0 +1,8 @@
+{
+  "id": "winnipeg",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Winnipeg",
+  "dataLevel": "national",
+  "aliases": []
+}

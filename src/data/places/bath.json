@@ -1,0 +1,8 @@
+{
+  "id": "bath",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Bath",
+  "dataLevel": "national",
+  "aliases": []
+}

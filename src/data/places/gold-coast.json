@@ -1,0 +1,8 @@
+{
+  "id": "gold-coast",
+  "type": "city",
+  "parentCountry": "australia",
+  "name": "Gold Coast",
+  "dataLevel": "national",
+  "aliases": []
+}

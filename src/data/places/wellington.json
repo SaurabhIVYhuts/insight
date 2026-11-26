@@ -1,0 +1,8 @@
+{
+  "id": "wellington",
+  "type": "city",
+  "parentCountry": "new-zealand",
+  "name": "Wellington",
+  "dataLevel": "national",
+  "aliases": []
+}

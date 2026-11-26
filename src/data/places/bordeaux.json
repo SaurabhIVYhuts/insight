@@ -1,0 +1,8 @@
+{
+  "id": "bordeaux",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Bordeaux",
+  "dataLevel": "national",
+  "aliases": []
+}

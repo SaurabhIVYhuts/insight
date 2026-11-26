@@ -1,0 +1,8 @@
+{
+  "id": "salzburg",
+  "type": "city",
+  "parentCountry": "austria",
+  "name": "Salzburg",
+  "dataLevel": "national",
+  "aliases": []
+}

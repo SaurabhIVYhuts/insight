@@ -1,0 +1,10 @@
+{
+  "id": "san-francisco",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "San Francisco",
+  "dataLevel": "national",
+  "aliases": [
+    "sf"
+  ]
+}

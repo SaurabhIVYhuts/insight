@@ -1,0 +1,8 @@
+{
+  "id": "guildford",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Guildford",
+  "dataLevel": "national",
+  "aliases": []
+}

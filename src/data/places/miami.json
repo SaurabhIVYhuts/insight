@@ -1,0 +1,8 @@
+{
+  "id": "miami",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Miami",
+  "dataLevel": "national",
+  "aliases": []
+}

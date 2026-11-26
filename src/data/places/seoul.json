@@ -1,0 +1,8 @@
+{
+  "id": "seoul",
+  "type": "city",
+  "parentCountry": "south-korea",
+  "name": "Seoul",
+  "dataLevel": "national",
+  "aliases": []
+}

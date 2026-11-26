@@ -1,0 +1,8 @@
+{
+  "id": "madrid",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Madrid",
+  "dataLevel": "national",
+  "aliases": []
+}

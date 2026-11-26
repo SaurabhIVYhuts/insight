@@ -1,0 +1,8 @@
+{
+  "id": "cambridge",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Cambridge",
+  "dataLevel": "national",
+  "aliases": []
+}

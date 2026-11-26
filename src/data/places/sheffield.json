@@ -1,0 +1,8 @@
+{
+  "id": "sheffield",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Sheffield",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "marseille",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Marseille",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "lisbon",
+  "type": "city",
+  "parentCountry": "portugal",
+  "name": "Lisbon",
+  "dataLevel": "national",
+  "aliases": []
+}

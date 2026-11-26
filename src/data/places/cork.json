@@ -1,0 +1,8 @@
+{
+  "id": "cork",
+  "type": "city",
+  "parentCountry": "ireland",
+  "name": "Cork",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "vienna",
+  "type": "city",
+  "parentCountry": "austria",
+  "name": "Vienna",
+  "dataLevel": "national",
+  "aliases": []
+}

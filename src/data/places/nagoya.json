@@ -1,0 +1,8 @@
+{
+  "id": "nagoya",
+  "type": "city",
+  "parentCountry": "japan",
+  "name": "Nagoya",
+  "dataLevel": "national",
+  "aliases": []
+}

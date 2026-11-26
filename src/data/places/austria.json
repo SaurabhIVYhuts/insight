@@ -1,0 +1,180 @@
+{
+  "id": "austria",
+  "type": "country",
+  "name": "Austria",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Austria",
+      "value": 90000,
+      "sub": "2023/24",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~35%",
+      "sub": "Undergraduate: ~65%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€150 residence permit",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Germany",
+      "region": "Europe",
+      "value": 28000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 9000
+    },
+    {
+      "name": "Turkey",
+      "region": "Middle East",
+      "value": 4000
+    },
+    {
+      "name": "Bosnia and Herzegovina",
+      "region": "Europe",
+      "value": 3000
+    },
+    {
+      "name": "Hungary",
+      "region": "Europe",
+      "value": 3000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Winter semester (main)",
+      "applyMonths": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "startMonths": [
+        10
+      ]
+    },
+    {
+      "name": "Summer semester",
+      "applyMonths": [
+        11,
+        12,
+        1,
+        2
+      ],
+      "startMonths": [
+        3
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 18200
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 5900
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 2600
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "region": "Europe",
+        "value": 2000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Germany",
+        "region": "Europe",
+        "value": 9800
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 3200
+      },
+      {
+        "name": "Turkey",
+        "region": "Middle East",
+        "value": 1400
+      },
+      {
+        "name": "Bosnia and Herzegovina",
+        "region": "Europe",
+        "value": 1100
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Austria-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~35%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €150 residence permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €1,200 a month",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 8 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week after a short wait",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.migration.gv.at/en/"
+  },
+  "sources": [
+    {
+      "title": "Austrian migration portal",
+      "url": "https://www.migration.gv.at/en/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

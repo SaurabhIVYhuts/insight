@@ -1,0 +1,8 @@
+{
+  "id": "swansea",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Swansea",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "waterloo",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Waterloo",
+  "dataLevel": "national",
+  "aliases": []
+}

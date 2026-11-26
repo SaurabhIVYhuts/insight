@@ -1,0 +1,8 @@
+{
+  "id": "wroclaw",
+  "type": "city",
+  "parentCountry": "poland",
+  "name": "Wroclaw",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": "dubai",
+  "type": "city",
+  "parentCountry": "united-arab-emirates",
+  "name": "Dubai",
+  "dataLevel": "national",
+  "aliases": [
+    "dxb"
+  ]
+}

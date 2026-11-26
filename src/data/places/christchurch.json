@@ -1,0 +1,8 @@
+{
+  "id": "christchurch",
+  "type": "city",
+  "parentCountry": "new-zealand",
+  "name": "Christchurch",
+  "dataLevel": "national",
+  "aliases": []
+}

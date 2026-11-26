@@ -1,0 +1,8 @@
+{
+  "id": "aarhus",
+  "type": "city",
+  "parentCountry": "denmark",
+  "name": "Aarhus",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,184 @@
+{
+  "id": "hong-kong",
+  "type": "country",
+  "name": "Hong Kong",
+  "dataLevel": "national",
+  "aliases": [
+    "hk"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Hong Kong",
+      "value": 55000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~60%",
+      "sub": "Undergraduate: ~40%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "Varies",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Mainland China",
+      "region": "Asia",
+      "value": 38000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 2000
+    },
+    {
+      "name": "Pakistan",
+      "region": "South Asia",
+      "value": 1500
+    },
+    {
+      "name": "Malaysia",
+      "region": "Southeast Asia",
+      "value": 1200
+    },
+    {
+      "name": "United States",
+      "region": "North America",
+      "value": 1000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "January (limited)",
+      "applyMonths": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Mainland China",
+        "region": "Asia",
+        "value": 15200
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 800
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 600
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 500
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Mainland China",
+        "region": "Asia",
+        "value": 22800
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1200
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 900
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 700
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Hong Kong-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~60%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "Varies; see the official site",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Set by each institution",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 4 to 6 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "On-campus work, and limited off-campus work with permission",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.immd.gov.hk/eng/services/visas/study.html"
+  },
+  "sources": [
+    {
+      "title": "Immigration Department, Study visa",
+      "url": "https://www.immd.gov.hk/eng/services/visas/study.html",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

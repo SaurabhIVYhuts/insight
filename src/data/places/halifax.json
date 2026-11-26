@@ -1,0 +1,8 @@
+{
+  "id": "halifax",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Halifax",
+  "dataLevel": "national",
+  "aliases": []
+}

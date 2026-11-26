@@ -1,0 +1,8 @@
+{
+  "id": "delft",
+  "type": "city",
+  "parentCountry": "netherlands",
+  "name": "Delft",
+  "dataLevel": "national",
+  "aliases": []
+}

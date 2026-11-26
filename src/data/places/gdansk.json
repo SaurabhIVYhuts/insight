@@ -1,0 +1,8 @@
+{
+  "id": "gdansk",
+  "type": "city",
+  "parentCountry": "poland",
+  "name": "Gdansk",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "edinburgh",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Edinburgh",
+  "dataLevel": "national",
+  "aliases": []
+}

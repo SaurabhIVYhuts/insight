@@ -1,0 +1,204 @@
+{
+  "id": "united-kingdom",
+  "type": "country",
+  "name": "United Kingdom",
+  "dataLevel": "national",
+  "aliases": [
+    "uk",
+    "england",
+    "britain"
+  ],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, United Kingdom",
+      "value": 730000,
+      "sub": "2023/24",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~57%",
+      "sub": "Undergraduate: ~43%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~£490 to £525",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 150000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 140000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 40000
+    },
+    {
+      "name": "Pakistan",
+      "region": "South Asia",
+      "value": 30000
+    },
+    {
+      "name": "United States",
+      "region": "North America",
+      "value": 25000
+    },
+    {
+      "name": "Hong Kong",
+      "region": "Asia",
+      "value": 24000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 22000
+    },
+    {
+      "name": "France",
+      "region": "Europe",
+      "value": 20000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "January",
+      "applyMonths": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "startMonths": [
+        1,
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 64500
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 60200
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 17200
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 12900
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 85500
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 79800
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 22800
+      },
+      {
+        "name": "Pakistan",
+        "region": "South Asia",
+        "value": 17100
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "United Kingdom-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~57%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About £490 to £525 plus the health surcharge",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About £1,100 to £1,500 a month for up to 9 months, depending on location",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically about 3 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week in term time",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.gov.uk/student-visa"
+  },
+  "sources": [
+    {
+      "title": "UK Government, Student visa",
+      "url": "https://www.gov.uk/student-visa",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

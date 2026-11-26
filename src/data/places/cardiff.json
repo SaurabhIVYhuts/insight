@@ -1,0 +1,8 @@
+{
+  "id": "cardiff",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Cardiff",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "galway",
+  "type": "city",
+  "parentCountry": "ireland",
+  "name": "Galway",
+  "dataLevel": "national",
+  "aliases": []
+}

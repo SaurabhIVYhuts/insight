@@ -1,0 +1,181 @@
+{
+  "id": "belgium",
+  "type": "country",
+  "name": "Belgium",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Belgium",
+      "value": 75000,
+      "sub": "2022/23",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~40%",
+      "sub": "Undergraduate: ~60%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€180 long-stay visa",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "France",
+      "region": "Europe",
+      "value": 14000
+    },
+    {
+      "name": "Netherlands",
+      "region": "Europe",
+      "value": 7000
+    },
+    {
+      "name": "Italy",
+      "region": "Europe",
+      "value": 3000
+    },
+    {
+      "name": "Cameroon",
+      "region": "Sub-Saharan Africa",
+      "value": 3000
+    },
+    {
+      "name": "Morocco",
+      "region": "North Africa",
+      "value": 3000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "September (main)",
+      "applyMonths": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "startMonths": [
+        9
+      ]
+    },
+    {
+      "name": "February (limited)",
+      "applyMonths": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "startMonths": [
+        2
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "France",
+        "region": "Europe",
+        "value": 8400
+      },
+      {
+        "name": "Netherlands",
+        "region": "Europe",
+        "value": 4200
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 1800
+      },
+      {
+        "name": "Cameroon",
+        "region": "Sub-Saharan Africa",
+        "value": 1800
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "France",
+        "region": "Europe",
+        "value": 5600
+      },
+      {
+        "name": "Netherlands",
+        "region": "Europe",
+        "value": 2800
+      },
+      {
+        "name": "Italy",
+        "region": "Europe",
+        "value": 1200
+      },
+      {
+        "name": "Cameroon",
+        "region": "Sub-Saharan Africa",
+        "value": 1200
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Belgium-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~40%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €180 long-stay visa",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €810 a month",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 2 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "20 hours a week",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://dofi.ibz.be/en"
+  },
+  "sources": [
+    {
+      "title": "Immigration Office (DOFI)",
+      "url": "https://dofi.ibz.be/en",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

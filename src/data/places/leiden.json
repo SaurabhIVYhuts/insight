@@ -1,0 +1,8 @@
+{
+  "id": "leiden",
+  "type": "city",
+  "parentCountry": "netherlands",
+  "name": "Leiden",
+  "dataLevel": "national",
+  "aliases": []
+}

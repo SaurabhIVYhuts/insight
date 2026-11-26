@@ -1,0 +1,8 @@
+{
+  "id": "padua",
+  "type": "city",
+  "parentCountry": "italy",
+  "name": "Padua",
+  "dataLevel": "national",
+  "aliases": []
+}

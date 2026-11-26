@@ -1,0 +1,8 @@
+{
+  "id": "canberra",
+  "type": "city",
+  "parentCountry": "australia",
+  "name": "Canberra",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "porto",
+  "type": "city",
+  "parentCountry": "portugal",
+  "name": "Porto",
+  "dataLevel": "national",
+  "aliases": []
+}

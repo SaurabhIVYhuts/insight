@@ -1,0 +1,10 @@
+{
+  "id": "quebec-city",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Quebec City",
+  "dataLevel": "national",
+  "aliases": [
+    "quebec"
+  ]
+}

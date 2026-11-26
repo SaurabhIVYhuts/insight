@@ -1,0 +1,8 @@
+{
+  "id": "utrecht",
+  "type": "city",
+  "parentCountry": "netherlands",
+  "name": "Utrecht",
+  "dataLevel": "national",
+  "aliases": []
+}

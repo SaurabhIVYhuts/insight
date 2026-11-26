@@ -1,0 +1,8 @@
+{
+  "id": "houston",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Houston",
+  "dataLevel": "national",
+  "aliases": []
+}

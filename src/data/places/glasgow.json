@@ -1,0 +1,8 @@
+{
+  "id": "glasgow",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Glasgow",
+  "dataLevel": "national",
+  "aliases": []
+}

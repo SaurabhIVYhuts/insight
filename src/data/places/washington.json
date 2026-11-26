@@ -1,0 +1,11 @@
+{
+  "id": "washington",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Washington",
+  "dataLevel": "national",
+  "aliases": [
+    "washington dc",
+    "dc"
+  ]
+}

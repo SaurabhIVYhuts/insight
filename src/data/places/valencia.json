@@ -1,0 +1,8 @@
+{
+  "id": "valencia",
+  "type": "city",
+  "parentCountry": "spain",
+  "name": "Valencia",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "leipzig",
+  "type": "city",
+  "parentCountry": "germany",
+  "name": "Leipzig",
+  "dataLevel": "national",
+  "aliases": []
+}

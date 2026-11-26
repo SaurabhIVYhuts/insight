@@ -1,0 +1,8 @@
+{
+  "id": "san-diego",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "San Diego",
+  "dataLevel": "national",
+  "aliases": []
+}

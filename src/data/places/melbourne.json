@@ -1,0 +1,8 @@
+{
+  "id": "melbourne",
+  "type": "city",
+  "parentCountry": "australia",
+  "name": "Melbourne",
+  "dataLevel": "national",
+  "aliases": []
+}

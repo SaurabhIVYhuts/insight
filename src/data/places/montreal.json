@@ -1,0 +1,8 @@
+{
+  "id": "montreal",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Montreal",
+  "dataLevel": "national",
+  "aliases": []
+}

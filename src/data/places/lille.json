@@ -1,0 +1,8 @@
+{
+  "id": "lille",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Lille",
+  "dataLevel": "national",
+  "aliases": []
+}

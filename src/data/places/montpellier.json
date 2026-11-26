@@ -1,0 +1,8 @@
+{
+  "id": "montpellier",
+  "type": "city",
+  "parentCountry": "france",
+  "name": "Montpellier",
+  "dataLevel": "national",
+  "aliases": []
+}

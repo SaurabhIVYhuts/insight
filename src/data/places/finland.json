@@ -1,0 +1,176 @@
+{
+  "id": "finland",
+  "type": "country",
+  "name": "Finland",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Finland",
+      "value": 24000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~50%",
+      "sub": "Undergraduate: ~50%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~€350 residence permit",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 2000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 1800
+    },
+    {
+      "name": "Nepal",
+      "region": "South Asia",
+      "value": 1500
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 1200
+    },
+    {
+      "name": "Russia",
+      "region": "Europe",
+      "value": 1000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "Autumn (main)",
+      "applyMonths": [
+        12,
+        1
+      ],
+      "startMonths": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "Spring (limited)",
+      "applyMonths": [
+        8,
+        9
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1000
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 900
+      },
+      {
+        "name": "Nepal",
+        "region": "South Asia",
+        "value": 800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 600
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 1000
+      },
+      {
+        "name": "Vietnam",
+        "region": "Southeast Asia",
+        "value": 900
+      },
+      {
+        "name": "Nepal",
+        "region": "South Asia",
+        "value": 800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 600
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Finland-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~50%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About €350 residence permit",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "About €800 a month",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 3 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "About 30 hours a week",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://migri.fi/en/home"
+  },
+  "sources": [
+    {
+      "title": "Finnish Immigration Service",
+      "url": "https://migri.fi/en/home",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

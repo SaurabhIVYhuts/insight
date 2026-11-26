@@ -1,0 +1,8 @@
+{
+  "id": "dundee",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Dundee",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,8 @@
+{
+  "id": "calgary",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Calgary",
+  "dataLevel": "national",
+  "aliases": []
+}

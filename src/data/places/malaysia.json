@@ -1,0 +1,195 @@
+{
+  "id": "malaysia",
+  "type": "country",
+  "name": "Malaysia",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Malaysia",
+      "value": 130000,
+      "sub": "2023",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~25%",
+      "sub": "Undergraduate: ~75%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "Varies",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "Bangladesh",
+      "region": "South Asia",
+      "value": 13000
+    },
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 12000
+    },
+    {
+      "name": "Nigeria",
+      "region": "Sub-Saharan Africa",
+      "value": 10000
+    },
+    {
+      "name": "Indonesia",
+      "region": "Southeast Asia",
+      "value": 8000
+    },
+    {
+      "name": "Pakistan",
+      "region": "South Asia",
+      "value": 7000
+    },
+    {
+      "name": "Yemen",
+      "region": "Middle East",
+      "value": 5000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "February",
+      "applyMonths": [
+        10,
+        11,
+        12
+      ],
+      "startMonths": [
+        2
+      ]
+    },
+    {
+      "name": "June or July",
+      "applyMonths": [
+        3,
+        4,
+        5
+      ],
+      "startMonths": [
+        6,
+        7
+      ]
+    },
+    {
+      "name": "September",
+      "applyMonths": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "startMonths": [
+        9
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "Bangladesh",
+        "region": "South Asia",
+        "value": 9800
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 9000
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 7500
+      },
+      {
+        "name": "Indonesia",
+        "region": "Southeast Asia",
+        "value": 6000
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "Bangladesh",
+        "region": "South Asia",
+        "value": 3300
+      },
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 3000
+      },
+      {
+        "name": "Nigeria",
+        "region": "Sub-Saharan Africa",
+        "value": 2500
+      },
+      {
+        "name": "Indonesia",
+        "region": "Southeast Asia",
+        "value": 2000
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Malaysia-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~25%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "Varies by institution and nationality",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Set by the institution",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 1 to 3 months",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Limited part-time work in holidays",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://educationmalaysia.gov.my/"
+  },
+  "sources": [
+    {
+      "title": "EMGS, Education Malaysia",
+      "url": "https://educationmalaysia.gov.my/",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

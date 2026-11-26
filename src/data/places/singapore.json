@@ -1,0 +1,186 @@
+{
+  "id": "singapore",
+  "type": "country",
+  "name": "Singapore",
+  "dataLevel": "national",
+  "aliases": [],
+  "placeholder": true,
+  "kpis": [
+    {
+      "label": "International students, Singapore",
+      "value": 75000,
+      "sub": "2024",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Postgraduate share",
+      "value": "~35%",
+      "sub": "Undergraduate: ~65%",
+      "delta": null,
+      "estimated": true
+    },
+    {
+      "label": "Student visa fee",
+      "value": "~SGD 30 processing",
+      "sub": "Indicative, check official site",
+      "delta": null,
+      "estimated": true
+    }
+  ],
+  "sourceCountries": [
+    {
+      "name": "China",
+      "region": "Asia",
+      "value": 18000
+    },
+    {
+      "name": "India",
+      "region": "South Asia",
+      "value": 12000
+    },
+    {
+      "name": "Indonesia",
+      "region": "Southeast Asia",
+      "value": 8000
+    },
+    {
+      "name": "Malaysia",
+      "region": "Southeast Asia",
+      "value": 7000
+    },
+    {
+      "name": "Vietnam",
+      "region": "Southeast Asia",
+      "value": 5000
+    },
+    {
+      "name": "Myanmar",
+      "region": "Southeast Asia",
+      "value": 4000
+    }
+  ],
+  "intakes": [
+    {
+      "name": "August (main)",
+      "applyMonths": [
+        10,
+        11,
+        12,
+        1,
+        2,
+        3
+      ],
+      "startMonths": [
+        8
+      ]
+    },
+    {
+      "name": "January",
+      "applyMonths": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "startMonths": [
+        1
+      ]
+    }
+  ],
+  "byLevel": {
+    "undergraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 11700
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 7800
+      },
+      {
+        "name": "Indonesia",
+        "region": "Southeast Asia",
+        "value": 5200
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 4600
+      }
+    ],
+    "postgraduate": [
+      {
+        "name": "China",
+        "region": "Asia",
+        "value": 6300
+      },
+      {
+        "name": "India",
+        "region": "South Asia",
+        "value": 4200
+      },
+      {
+        "name": "Indonesia",
+        "region": "Southeast Asia",
+        "value": 2800
+      },
+      {
+        "name": "Malaysia",
+        "region": "Southeast Asia",
+        "value": 2500
+      }
+    ]
+  },
+  "meta": {
+    "sourceCountries": {
+      "estimated": true,
+      "note": "Singapore-wide, all study types. Indicative figures rounded from published national statistics and not verified for this release. Replace with the official release before sharing."
+    },
+    "intakes": {
+      "note": "Typical windows, indicative only. Each university sets its own deadlines, so confirm with the institution."
+    },
+    "byLevel": {
+      "estimated": true,
+      "titles": {
+        "undergraduate": "Undergraduate (top source countries)",
+        "postgraduate": "Postgraduate (top source countries)"
+      },
+      "note": "Indicative split: each country's total divided using the national postgraduate share (~35%), not a published breakdown."
+    }
+  },
+  "visa": {
+    "fee": {
+      "value": "About SGD 30 processing plus issuance fees",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "financialProof": {
+      "value": "Set by each institution; see the official site",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "processing": {
+      "value": "Typically 4 to 6 weeks",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "workRights": {
+      "value": "Up to 16 hours a week in term time (university students)",
+      "asOf": "2026-11",
+      "estimated": true
+    },
+    "notes": "Indicative figures only. Visa rules, fees and processing times change often, so confirm every value on the official site before advising a student.",
+    "officialUrl": "https://www.ica.gov.sg/reside/STP"
+  },
+  "sources": [
+    {
+      "title": "ICA, Student's Pass",
+      "url": "https://www.ica.gov.sg/reside/STP",
+      "year": 2026
+    }
+  ],
+  "lastUpdated": "2026-11-21"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "aberdeen",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Aberdeen",
+  "dataLevel": "national",
+  "aliases": []
+}

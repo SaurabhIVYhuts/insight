@@ -1,0 +1,8 @@
+{
+  "id": "ottawa",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Ottawa",
+  "dataLevel": "national",
+  "aliases": []
+}

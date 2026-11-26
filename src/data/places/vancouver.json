@@ -1,0 +1,8 @@
+{
+  "id": "vancouver",
+  "type": "city",
+  "parentCountry": "canada",
+  "name": "Vancouver",
+  "dataLevel": "national",
+  "aliases": []
+}

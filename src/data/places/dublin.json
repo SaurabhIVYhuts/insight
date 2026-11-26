@@ -1,0 +1,8 @@
+{
+  "id": "dublin",
+  "type": "city",
+  "parentCountry": "ireland",
+  "name": "Dublin",
+  "dataLevel": "national",
+  "aliases": []
+}

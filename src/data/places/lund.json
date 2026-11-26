@@ -1,0 +1,8 @@
+{
+  "id": "lund",
+  "type": "city",
+  "parentCountry": "sweden",
+  "name": "Lund",
+  "dataLevel": "national",
+  "aliases": []
+}

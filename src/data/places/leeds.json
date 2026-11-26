@@ -1,0 +1,8 @@
+{
+  "id": "leeds",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Leeds",
+  "dataLevel": "national",
+  "aliases": []
+}

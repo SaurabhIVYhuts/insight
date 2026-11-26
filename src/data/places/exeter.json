@@ -1,0 +1,8 @@
+{
+  "id": "exeter",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Exeter",
+  "dataLevel": "national",
+  "aliases": []
+}

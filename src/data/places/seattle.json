@@ -1,0 +1,8 @@
+{
+  "id": "seattle",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Seattle",
+  "dataLevel": "national",
+  "aliases": []
+}

@@ -1,0 +1,10 @@
+{
+  "id": "newcastle-upon-tyne",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Newcastle Upon Tyne",
+  "dataLevel": "national",
+  "aliases": [
+    "newcastle"
+  ]
+}

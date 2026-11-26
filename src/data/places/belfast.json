@@ -1,0 +1,8 @@
+{
+  "id": "belfast",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Belfast",
+  "dataLevel": "national",
+  "aliases": []
+}

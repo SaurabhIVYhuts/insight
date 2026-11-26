@@ -1,0 +1,8 @@
+{
+  "id": "groningen",
+  "type": "city",
+  "parentCountry": "netherlands",
+  "name": "Groningen",
+  "dataLevel": "national",
+  "aliases": []
+}

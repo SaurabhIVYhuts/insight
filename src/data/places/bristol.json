@@ -1,0 +1,8 @@
+{
+  "id": "bristol",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Bristol",
+  "dataLevel": "national",
+  "aliases": []
+}

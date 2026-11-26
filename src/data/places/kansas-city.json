@@ -1,0 +1,8 @@
+{
+  "id": "kansas-city",
+  "type": "city",
+  "parentCountry": "united-states",
+  "name": "Kansas City",
+  "dataLevel": "national",
+  "aliases": []
+}

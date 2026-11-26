@@ -1,0 +1,8 @@
+{
+  "id": "coventry",
+  "type": "city",
+  "parentCountry": "united-kingdom",
+  "name": "Coventry",
+  "dataLevel": "national",
+  "aliases": []
+}

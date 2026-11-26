@@ -1,0 +1,10 @@
+{
+  "id": "krakow",
+  "type": "city",
+  "parentCountry": "poland",
+  "name": "Krakow",
+  "dataLevel": "national",
+  "aliases": [
+    "cracow"
+  ]
+}
