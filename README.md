@@ -2,7 +2,7 @@
 
 Standalone deployment of the **Daily Sold-Out Market Intelligence** dashboard
 (the `/insight` page), extracted from the main `ivyhuts-website` repo so it can
-live as its own Vercel project on its own domain (`insight.ivyhuts.com`).
+run as its own Cloudflare Worker on its own domain (`insight.ivyhuts.com`).
 
 It is the same code, unchanged:
 
@@ -68,61 +68,44 @@ already exists.)
 
 ---
 
-## Deploying to Vercel
+## Deploying to Cloudflare Workers
 
-1. **Push this folder to a new Git repo.**
+One Worker (`worker/index.js`, `wrangler.jsonc`) serves the React build and
+sends `/api/*` to a single Durable Object, which keeps the MongoDB connection
+open between requests.
 
-   ```bash
-   cd market-insight
-   git init && git add -A && git commit -m "Initial import: Market Insight standalone"
-   git branch -M main
-   git remote add origin <your-new-repo-url>
-   git push -u origin main
-   ```
-
-2. **Import the repo in Vercel** as a new project. Framework preset:
-   *Create React App* (auto-detected). Build command `npm run build`, output
-   `build/` — both defaults.
-
-3. **Set Environment Variables** (Production + Preview) — every value from
-   `.env.example`. The important ones:
-
-   | Variable | Value |
-   | --- | --- |
-   | `MONGODB_URI` | same as the main app |
-   | `SHARED_STORE` | `mongo` |
-   | `AMBER_MAX_REQUESTS_PER_MINUTE` | `6` |
-   | `CRON_SECRET` | a fresh random string |
-   | `RESEND_API_KEY` | your Resend key |
-   | `INSIGHTS_REPORT_RECIPIENTS` | comma-separated emails |
-   | `RESEND_FROM` | a verified sender, or leave unset for the sandbox |
-   | `SITE_URL` | `https://insight.ivyhuts.com/` |
-
-4. **Deploy.** `vercel.json` registers the daily digest cron
-   (`/api/insights/daily-digest`, `30 2 * * *` UTC = 08:00 IST).
-
-5. **Add the domain.** Project → Settings → Domains → add
-   `insight.ivyhuts.com`. If `ivyhuts.com`'s nameservers are already on
-   Vercel the DNS record + SSL are created automatically; otherwise add a
-   `CNAME` `insight → cname.vercel-dns.com` at your DNS provider. The apex
-   and every existing subdomain keep pointing at the main project.
-
-6. **Keep the crawl moving.** On Hobby you can't run a 5-minute cron, so
-   enable the included GitHub Action (`.github/workflows/advance-crawl.yml`)
-   — add repo secrets `INSIGHT_BASE_URL` and `CRON_SECRET`. On Pro, delete
-   that workflow and add a second `crons` entry to `vercel.json` instead:
-   `{ "path": "/api/insights/advance-crawl", "schedule": "*/10 * * * *" }`.
-
-   **Run the crawl-keeper in ONE place only** — either here or in the main
-   app, never both against the same database.
-
-### Manually triggering the jobs
+**Free plan:** not yet confirmed. Password hashing and the crawl use more than
+the 10 ms of CPU a plain Worker gets on Free; whether the Durable Object gets
+more there is only provable on a real deployment. After deploying, test a login
+and one crawl run; an "exceeded CPU" error means the Paid plan is needed.
 
 ```bash
-curl -H "Authorization: Bearer $CRON_SECRET" https://insight.ivyhuts.com/api/insights/advance-crawl
-curl -H "Authorization: Bearer $CRON_SECRET" https://insight.ivyhuts.com/api/insights/daily-digest
+npm run preview                    # build + wrangler dev (uses the real database)
+npx wrangler login
+npm run deploy                     # build + wrangler deploy
+npx wrangler secret put NAME       # once per secret
 ```
----
+
+**Secrets** (names in `.env.example`): `MONGODB_URI`, `SHARED_STORE` (`mongo`),
+`CRON_SECRET`, `RESEND_API_KEY`, `RESEND_FROM`, `INSIGHTS_REPORT_RECIPIENTS`,
+`SITE_URL`, `AMBER_MAX_REQUESTS_PER_MINUTE`, `AMBER_FETCH_TIMEOUT_MS`,
+`AUTH_SESSION_TTL_SECONDS`. There are no `REACT_APP_*` build variables.
+
+**Domain:** Cloudflare dashboard → Workers & Pages → `market-insight` →
+Settings → Domains & Routes → add custom domain `insight.ivyhuts.com`.
+
+### Cron jobs (cron-job.org)
+
+Cloudflare Cron Triggers are off. Both jobs are `GET` requests with the header
+`Authorization: Bearer <CRON_SECRET>`.
+
+| Job | URL | Schedule |
+| --- | --- | --- |
+| Crawl keeper | `https://insight.ivyhuts.com/api/insights/advance-crawl` | every 5 minutes |
+| Daily digest | `https://insight.ivyhuts.com/api/insights/daily-digest` | 02:30 UTC (08:00 IST) |
+
+The main site's search depends on the crawl: it must run at least every 26 hours.
+**Run the crawl keeper in one place only** (here or in the main app).
 
 ## Auth across `*.ivyhuts.com` (optional)
 
@@ -172,7 +155,8 @@ scripts/
   start-local.js               `npm start` orchestrator (unchanged copy)
   local-api-server.js          local API server, trimmed to insights + auth (new)
   create-internal-user.js      provisioning helper (new)
-.github/workflows/
-  advance-crawl.yml            Hobby-plan crawl keeper (new)
-vercel.json                    functions + SPA rewrite + daily-digest cron
+worker/index.js                Cloudflare Worker + API Durable Object
+wrangler.jsonc                 Worker + static assets config
+public/_headers                security headers for static files
+vercel.json                    old Vercel config (unused on Cloudflare)
 ```

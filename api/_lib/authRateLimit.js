@@ -4,6 +4,7 @@
 // "auth:*" keys — this never touches or competes with Amber's
 // "amber:requests" key or its global 6/min budget.
 const { reserveSlot } = require("./sharedStore");
+const { IS_WORKERS } = require("./runtime");
 
 // Vercel's edge network sets/overwrites x-forwarded-for with the real
 // client IP before a request reaches a serverless function (client-supplied
@@ -15,6 +16,9 @@ const { reserveSlot } = require("./sharedStore");
 // requests — acceptable for local dev, where per-IP limiting isn't the
 // point anyway.
 function getClientIp(req) {
+    // On Cloudflare only cf-connecting-ip is trustworthy: a client can send its
+    // own x-forwarded-for / x-vercel-forwarded-for and dodge the per-IP limit.
+    if (IS_WORKERS) return String(req.headers["cf-connecting-ip"] || "unknown");
     const vercelHeader = req.headers["x-vercel-forwarded-for"];
     if (vercelHeader) return String(vercelHeader).split(",")[0].trim();
     const forwarded = req.headers["x-forwarded-for"];

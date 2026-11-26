@@ -13,8 +13,11 @@ const path = require("path");
 // Plain `node` (unlike `vercel dev`) never loads .env files on its own, so
 // this MUST run before requiring the API handlers below — some of them read
 // env vars at require-time.
-require("dotenv").config({ path: path.join(__dirname, "..", ".env.local") });
-require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
+// Skipped inside the Cloudflare Worker, where secrets are already in process.env.
+if (require.main === module) {
+  require("dotenv").config({ path: path.join(__dirname, "..", ".env.local") });
+  require("dotenv").config({ path: path.join(__dirname, "..", ".env") });
+}
 
 const http = require("http");
 const { URL } = require("url");
@@ -40,7 +43,16 @@ const routes = {
 
 const PORT = process.env.LOCAL_API_PORT || 3001;
 
+// Same headers public/_headers puts on the static files.
+const SECURITY_HEADERS = {
+  "X-Frame-Options": "SAMEORIGIN",
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=()",
+};
+
 function adaptResponse(res) {
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) res.setHeader(name, value);
   res.status = (code) => {
     res.statusCode = code;
     return res;
@@ -91,11 +103,19 @@ const server = http.createServer(async (req, res) => {
     if (!res.headersSent) {
       res.statusCode = 500;
       res.setHeader("Content-Type", "application/json");
-      res.end(JSON.stringify({ ok: false, error: "internal_error", message: err.message }));
+      // The error text is only shown in local development.
+      const message = require.main === module ? err.message : undefined;
+      res.end(JSON.stringify({ ok: false, error: "internal_error", message }));
     }
   }
 });
 
-server.listen(PORT, () => {
-  console.log(`[local-api-server] listening on http://localhost:${PORT} (proxied at /api/* by the CRA dev server)`);
-});
+// Exported so the Cloudflare Worker (worker/index.js) can reuse this exact
+// router; only listens on its own when run directly (`npm start`).
+module.exports = { server, PORT };
+
+if (require.main === module) {
+  server.listen(PORT, () => {
+    console.log(`[local-api-server] listening on http://localhost:${PORT} (proxied at /api/* by the CRA dev server)`);
+  });
+}

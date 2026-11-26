@@ -16,7 +16,7 @@
 // step. The caller (api/enquire.js) is what decides how to turn that into an
 // HTTP response — this module's job is just to never lie about whether the
 // email actually went out.
-const Mailgen = require("mailgen");
+const Mailgen = require("./mailgenLite"); // eval-free, Workers-safe stand-in for the `mailgen` package
 const { Resend } = require("resend");
 
 // Used only for the cosmetic "view this email" / copyright link Mailgen

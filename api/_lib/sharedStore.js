@@ -21,11 +21,12 @@
 // local dev and the verify scripts set it for other reasons, and must never
 // write sessions, locks or Amber budget entries into the production store.
 // Otherwise everything falls back to a plain in-process Map, which is NOT
-// shared across serverless instances; a deployed Vercel environment refuses
+// shared across serverless instances; a deployed environment refuses
 // that fallback outright (warnFallbackOnce).
 const zlib = require("zlib");
 const mongoose = require("mongoose");
 const { connectToDatabase } = require("./mongodb");
+const { IS_WORKERS } = require("./runtime");
 
 const STORE_AVAILABLE = process.env.SHARED_STORE === "mongo" && Boolean(process.env.MONGODB_URI);
 const COLLECTION = "kvstore";
@@ -43,8 +44,8 @@ function log(...args) {
 // empty state, multiplying real Amber traffic.
 let warnedFallback = false;
 function warnFallbackOnce() {
-    if (["production", "preview"].includes(process.env.VERCEL_ENV)) {
-        throw new StoreUnavailableError(new Error("SHARED_STORE=mongo / MONGODB_URI are not configured in a deployed Vercel environment"));
+    if (IS_WORKERS || ["production", "preview"].includes(process.env.VERCEL_ENV)) {
+        throw new StoreUnavailableError(new Error("SHARED_STORE=mongo / MONGODB_URI are not configured in a deployed environment"));
     }
     if (warnedFallback) return;
     warnedFallback = true;

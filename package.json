@@ -6,7 +6,6 @@
   "dependencies": {
     "bcryptjs": "^3.0.3",
     "lucide-react": "^1.30.0",
-    "mailgen": "^2.0.36",
     "mongoose": "^9.9.1",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -18,13 +17,16 @@
   "devDependencies": {
     "dotenv": "^17.4.2",
     "http-proxy-middleware": "^2.0.9",
-    "vercel": "^58.7.1"
+    "vercel": "^58.7.1",
+    "wrangler": "^4.166.0"
   },
   "scripts": {
     "start": "node scripts/start-local.js",
     "start:frontend-only": "react-scripts start",
     "dev": "node scripts/start-local.js",
     "build": "react-scripts build",
+    "deploy": "npm run build && wrangler deploy",
+    "preview": "npm run build && wrangler dev --var SHARED_STORE:mongo",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "create-internal-user": "node scripts/create-internal-user.js"

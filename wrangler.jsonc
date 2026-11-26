@@ -1,0 +1,30 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "market-insight",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-11-19",
+  "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],
+  "workers_dev": false,
+  "preview_urls": false,
+  "assets": {
+    "directory": "./build",
+    "binding": "ASSETS",
+    "not_found_handling": "single-page-application",
+    "run_worker_first": ["/api/*"]
+  },
+  // The API runs in a single Durable Object (see worker/index.js). SQLite-backed
+  // classes are the kind available on the Free plan; nothing is stored in it.
+  "durable_objects": {
+    "bindings": [{ "name": "API", "class_name": "ApiServer" }]
+  },
+  "migrations": [{ "tag": "v1", "new_sqlite_classes": ["ApiServer"] }],
+  "triggers": {
+    // Cloudflare's own cron is off on purpose: /api/insights/advance-crawl and
+    // /api/insights/daily-digest are driven by cron-job.org.
+    // Keep the empty array — omitting it would leave an old trigger in place.
+    "crons": []
+  },
+  "observability": {
+    "enabled": true
+  }
+}
