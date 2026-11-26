@@ -6,6 +6,7 @@
   "compatibility_flags": ["nodejs_compat", "nodejs_compat_populate_process_env"],
   "workers_dev": false,
   "preview_urls": false,
+  "routes": [{ "pattern": "insight.ivyhuts.com", "custom_domain": true }],
   "assets": {
     "directory": "./build",
     "binding": "ASSETS",
