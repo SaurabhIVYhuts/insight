@@ -49,8 +49,6 @@ function computeSevenDayAvg(docs) {
     };
 }
 
-// null when there's no prior snapshot yet — the frontend renders
-// "Comparison unavailable" rather than inventing a delta.
 // This endpoint is public, and a mail provider's error text can contain
 // recipient addresses — report only that sending failed.
 function toPublic(doc) {
@@ -58,7 +56,9 @@ function toPublic(doc) {
     return { ...doc, email: { ...doc.email, error: "Email delivery failed" } };
 }
 
-
+// null when there's no prior snapshot yet — the frontend renders
+// "Comparison unavailable" rather than inventing a delta.
+async function buildComparison(date) {
     try {
         const [previous, recent] = await Promise.all([getPreviousSnapshot(date), getRecentSnapshots(date, 7)]);
         if (!previous) return null;
